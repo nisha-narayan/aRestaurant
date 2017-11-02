@@ -1,0 +1,67 @@
+<img id="loadingIcon" ng-src="images/loading1.gif"
+	ng-show="showLoadingIcon" />
+<table class="sign_in">
+	<thead ng-hide="hideSignInHeader">
+		<td></td>
+		<td id="signIn_header">
+			<center>Sign &nbsp; In &nbsp; Your &nbsp; Account</center>
+		</td>
+		<td></td>
+	</thead>
+       
+		<tr height = "40px" width = "100%"></tr>
+		  <tr> <td colspan = "2" width = "100%" > <center style = "color:red;"> {{sessionInfo}} </center> </td></tr> 
+		  <tr> <td colspan = "2" width = "100%"> <center style = "color:#452440;"> {{sessionInfo1}} </center> </td>  </tr>
+	      <tr> <td colspan = "2" width = "100%"> <center style = "color:#452440;"> {{sessionInfo2}} </center> </td>  </tr>
+	    <tr height = "60px" width = "100%"></tr>
+		<tr>
+			<td id="tdLogin"><label id="lblUsername"> Username </label> <input
+				id="usernameInput" type=text ng-model="customerLogin.Username" /></td>
+			<td id="tdLoginError"></td>
+		</tr>
+		<tr>
+			<td id="tdLogin"><a id="forgotPassword" href=''
+				ng-click="forgotUsername()"> Forgot username ? </a></td>
+			<td id="tdLoginError" ><label id="loginError"
+				ng-hide="hideSessionIncorrectLogin">
+					<center>Incorrect Username</center>
+			</label></td>
+		</tr>
+		<tr class = "trVerticalSpace4">
+		</tr>
+		<tr>
+			<td id="tdLogin"><label id="lblPassword"> Password </label> <input
+				id="passwordInput" type=password ng-model="customerLogin.Password" /></td>
+			<td id="tdLoginError"><label id="loginError"
+				ng-hide="hideSessionIncorrectLogin">
+					<center>or Password</center>
+			</label></td>
+		</tr>
+		<tr>
+			<td id="tdLogin"><a id="forgotPassword" href=''
+				ng-click="forgotPassword()"> Forgot password ? </a></td>
+			<td id="tdLoginError"></td>
+		</tr>
+		<tr height = "20px">
+		</tr>
+		<tr>
+			<td id = "tdSignIn"  colspan="2">
+				<center>
+					<button id = "signInNew" class="buttons" 
+						ng-click="signInUser()">Sign In</button>
+				</center>
+			</td>
+		</tr>
+
+</table>
+
+
+<script type="text/ng-template" id="signInValidation.html"  >    
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+      <img class = "modal-errorIcon" src = "images/errorIcon2.png" />
+       <div class = "modal-validationText"> {{modalValidationText}} </center>
+     <center><button class="OkBtnModal" "type="button" ng-click="hideModal()" ng-style = "btnPosition"> OK</button></center>
+     </div>
+</script>

@@ -1,0 +1,44 @@
+
+<body bgcolor = black ng-app = "delivery_status"  >
+<div id = "logOff" ng-click = "logOut()"> <img  ng-src = "images/logOut.png" /> </div>
+<table class = "delivery_status" cellspacing = "0" cellpadding = "0" >
+<thead class = "deliveryPerson_header" >
+<th  colspan = "2" style = "height:26px;width:220px;"> {{deliveryPerson}} </th>
+<tr class = "deliveryStatus_header" >
+<td width = "120px" style="height:23px;"> Order # </td>
+<td width = "114px" style="height:23px;"> Status  </td>
+</tr>
+</thead>
+<tbody id = "deliveryOrders" >
+<tr id = "orderList"  ng-repeat = "order in deliveryList" > 
+<td width = "120px" style = "color:grey;border:1px solid grey;text-align:center;" ng-click = "showDeliveryAddress(order._id)" ng-class = "{orderSelected:isOrderSelected(order._id)}" > {{order.OrderId}}</td> 
+<td width = "100px" style = "border:1px solid grey;"> 
+<center>
+<button class = "buttons" ng-class = "{Highlight: order._id === isItemDelivered(order._id)}" ng-click = "updateDeliveryStatus(order._id)" > Delivered </button>
+</center>
+</td>    
+</tr> 
+</tbody>
+<tbody style = "background-color:#6b616b;">
+<tr height = "9px" style = "background-color:rgba(39, 12, 39, 0.4);border-top:1px solid #999999;">  <td width = "234px" >  </td>  </tr>
+</tbody>
+</table>
+</body>
+
+<script type="text/ng-template" id="customerAddress.html">
+     <div class = "modal-header-background" >
+     <div class = "modal-header" >
+      <center>Address </center> <img class = "modalCloseBtn"  src = "images/close4.png" ng-click="hideModal()" /> 
+     </div>
+     </div>
+     <div class = "modal-body" >
+      <div class = "modal-validationText">  
+       {{customerAddress.shipAddressLine1}} <br>
+       {{customerAddress.shipAddressLine2}} <br>
+       {{customerAddress.shipCity}} <br>
+       {{customerAddress.shipState}} <br>
+       {{customerAddress.shipZipCode}} <br>
+       <div> <img class = "phoneIcon" src = "images/phone.png" /> {{customerPhone}} </div>
+      </div>
+     </div>
+</script>

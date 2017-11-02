@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<head>
+<title>Aroma</title>
+
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/angular/angular.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/angular-route/angular-route.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/angular-cookies/angular-cookies.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/angular-ui-mask/dist/mask.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/ng-idle/angular-idle.min.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/crypto-js/crypto-js.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/braintree-web/client.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/node_modules/braintree-web/hosted-fields.js"></script>
+<script src="https://localhost:3000/app/app.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/services/services.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/directives/directives.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/controllers/ApplicationController.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/controllers/menuappcontroller.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/controllers/cartappController.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/controllers/paymentDetailsController.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/controllers/orderConfirmController.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/controllers/signInController.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/controllers/trackOrderController.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/app/controllers/sessionExpiredController.js"></script>
+<link rel=Stylesheet href="https://localhost:3000/views/css/app.css"
+	TYPE="text/css">
+
+</head>
+
+
+<body ng-app='first_app' ng-controller='ApplicationController'>
+
+	    <div class="canvas">
+		<!--  <div id="sky"> </div> -->
+		 <div class="foreground"></div> 
+         </div> 
+         <div id = "profileOptions"  ng-mouseleave="hideProfileOptions = true" ng-hide = "hideProfileOptions"> 
+		 <div id = "updateProfile" ng-click = "updateProfile()" >  Update Profile  </div>
+		 <div id = "changeUsername" ng-click = "changeUsername()" > Change Username  </div>
+		 <div id = "logOut" ng-click = "logOut()" > Log out  </div>
+	     </div>
+	
+	<h1 class="shimmer">
+		<center>Aroma</center>
+	</h1>
+	
+
+	
+
+		
+	<div class="mainView">
+	<div id="appCover" class="app_container" ng-hide="hideAppContainer" ></div>
+		<div ng-view class="view-animate"></div>
+	</div>
+    </div>
+
+
+	<label id="locationLabel"> Locations </label>
+	<img id="downArrow2" ng-src="images/downArrow3.png"
+		ng-click="showLocations()" />
+	<div id="locationContainer" ng-hide="hideLocation"
+		ng-mouseleave="hideLocation = true">
+
+		<uib-accordion id="locationsList" close-others="true">
+		<div uib-accordion-group class="panel-default" id="{{location._id}}"
+			is-open="isOpen" heading="{{location.LocationName}}" height="40px"
+			ng-repeat="location in Locations"
+			template-url="location-template.html">
+			<center>
+				{{location.Address.Line1}} <br> {{location.Address.Line2}} <br>
+				{{location.Address.City}} <br> {{location.Address.State}} <br>
+				{{location.Address.Zip}}
+			</center>
+		</div>
+		</uib-accordion>
+	</div>
+
+	<label id="contactLabel"> Contact Us </label>
+	<img id="downArrow1" ng-src="images/downArrow3.png"
+		ng-click="showContact()" />
+	<div id="contactContainer" ng-hide="hideContact"
+		ng-mouseleave="hideContact = true">
+		<center>
+			<label id="contactInformation"> contact information </label>
+		</center>
+		<br> <img id="emailIcon" src="images/emailIcon.png"> <label
+			id="contactInfo"> emailaddress@email.com </label> <img id="phoneIcon"
+			src="images/phoneIcon1.png"> <label id="contactInfo">
+			000-000-0000 </label>
+	</div>
+
+
+
+</body>
+
+<script type="text/ng-template" id="location-template.html">    
+    <div>
+      <div class="location-heading"  >
+            <div class = "location-title" ng-click="toggleOpen()"  >
+              <span id = "headingText" > {{heading}}  </span>  
+            </div>                     
+      </div>
+      <div class="panel-collapse collapse"  uib-collapse="!isOpen" >
+        <div ng-hide = "hidePanelBody" class="panel-body" style="text-align:left;" ng-transclude > 
+        </div>
+     </div>
+    </div>   
+</script>
+
+<script type="text/ng-template" id="profile-template.html">    
+<div id = "updateProfileHeader"> </div>
+<table id = "profileForm">
+<tr height = "5px" >  </tr>
+<tbody>
+<tr>  <td width = "120px">  Username      </td>  <td width = "200px"> <input type = "text" ng-model = "Person.Username" ng-disabled = "disableUsername" />    </td> </tr>
+<tr>  <td width = "120px">  First Name    </td>  <td width = "200px"> <input type = "text" ng-model = "Person.FirstName" />    </td> </tr>
+<tr>  <td width = "120px">  Last Name     </td>  <td width = "200px"> <input type = "text" ng-model = "Person.LastName" />    </td> </tr>
+<tr>  <td width = "120px">  Address Line1 </td> <td width = "200px"> <input type = "text" ng-model = "Person.Address.AddressLine1" />    </td> </tr>
+<tr>  <td width = "120px">  Address Line2 </td> <td width = "200px"> <input type = "text" ng-model = "Person.Address.AddressLine2" />    </td> </tr>
+<tr>  <td width = "120px">  City          </td> <td width = "200px"> <input type = "text" ng-model = "Person.Address.City" />    </td> </tr>
+<tr>  <td width = "120px">  State         </td> <td width = "200px"> <input type = "text" ng-model = "Person.Address.State" />    </td> </tr>
+<tr>  <td width = "120px">  ZipCode       </td> <td width = "200px"> <input type = "text" ng-model = "Person.Address.ZipCode" />    </td> </tr>
+<tr>  <td width = "120px">  E-mail   </td> <td width = "200px">   <input type = "email" ng-model = "Person.Email" />   </td>  </tr>  
+<tr height = "10px" >  </tr>
+<tr>  <td width = "150px" > <center> <button class = "buttons" ng-click = "save()" > Save </button> </center> </td> <td width = "150px" > <center> <button class = "buttons" ng-click = "cancel()" > Cancel </button> </center> </td> </tr>
+</tbody>
+</table>   
+</script>
+
+<script type="text/ng-template" id="change-username.html">    
+<div id = "updateProfileHeader"> </div>
+<table id = "changeUsernameForm">
+<tr height = "5px" >  </tr>
+<tbody>
+<tr>  <td width = "120px">  Username      </td>  <td width = "200px"> <input type = "text" ng-model = "Person.Username" ng-disabled = "disableUsername" />    </td> </tr>
+<tr>  <td width = "120px">  New Username    </td>  <td width = "200px"> <input type = "text" ng-model = "newUser" />    </td> </tr>
+<tr height = "10px" >  </tr>
+<tr>  <td width = "150px" > <center> <button class = "buttons" ng-click = "save()" > Save </button> </center> </td> <td width = "150px" > <center> <button class = "buttons" ng-click = "cancel()" > Cancel </button> </center> </td> </tr>
+</tbody>
+</table>   
+</script>
+
+<script type="text/ng-template" id="profileValidation.html">
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+     <img class = "modal-errorIcon" ng-src = "images/errorIcon2.png"/> <div class = "modal-validationText">  {{modalValidationText}}  </div>
+     <center><button class="modalOkBtn" "type="button" ng-click="hideModal()">OK</button></center>
+     </div>
+</script>
+
+</html>

@@ -1,0 +1,317 @@
+#order_confirm {
+   font-family:'Baumans Regular';
+   position:relative;
+   left:2px;
+   top:28.7px;
+   width: 683px;
+   table-layout: fixed;
+   height:410px;
+   border-collapse: collapse;
+   outline: 2px solid grey;
+}
+
+#orderConfirmCover {
+    position:absolute;
+    left: 0px;
+    top: 26.7px;
+    width: 687px;
+    height:461px;
+    background:rgba(0, 0, 0, 0.8);  
+    z-index:1;
+  }
+  
+#tbdyLogin {
+	height:150px;
+	width:100%;	
+}
+
+#orderConfirmHeader {
+	font-size: 20px; 
+	color: #452440;
+	background-color: #868086; 
+	font-family: 'Space Age', cursive;
+}
+
+#tdOrderSummary {
+	width:683px;
+}
+
+#orderMessage {
+    border: 1px solid grey; 
+    background: #b3b3b3;
+}
+
+#trOrderMessage {
+	width:679px ;
+}
+
+#trOrderGreeting {
+	width:679px;
+}
+
+#tdOrderGreeting {
+	width:339.5px;
+}
+
+#tdOrderNumber {
+	width:339.5px;
+}
+
+#orderGreeting {
+	position: relative; 
+	left: 10px;
+}
+
+#orderNumber {
+	position: relative; 
+	left: 195px;
+}
+
+#orderDetails {
+	border-left: 1px solid grey; 
+	border-right: 1px solid grey;
+}
+
+#itemDetails {
+	box-shadow: 0 0 -1px #666666; 
+	background: #404040;
+}
+
+#addressDetails {
+	box-shadow: -1px 0 0 #666666; 
+	background: #404040;
+}
+
+#tblItemAndCost {
+	position: relative; 
+	width: 365px; 
+	height: 210px; 
+	border-collapse: collapse;
+}
+
+#tblAddress {
+	position: relative; 
+	height: 210px; 
+	width: 312px; 
+	border-collapse: collapse;
+}
+
+#tbdyAddress {
+    height:127px;
+    width:312px;
+	box-shadow: 0 -1px 0 #404040; 
+	box-shadow: -1 0 0 #404040; 
+	box-shadow: 0 0 -1px #404040; 
+	background: rgba(26, 0, 26, 0.7);
+	color: grey;
+}
+
+#trShipAddress {
+	height:20px;
+}
+
+#tdShipAddress {
+	 background-color: #868086; 
+	 color: #452440; 
+	 font-size: 16px; 
+	 border-bottom: 1px solid #666666;
+	 width:312px;
+}
+	
+#tbdyContactInfo {
+	height:83px;
+	width:312px;
+	outline: 1px solid #404040;
+}
+						
+#tdContactInfo {
+	width:312px; 
+	background-color: #868086; 
+	color: #452440; 
+	font-size: 16px; 
+	border-bottom: 1px solid #404040;
+}
+
+#trContactInfo {
+	height:20px;
+}
+	
+	
+#tdEmailLbl {
+	width:61px;
+	height:31px;
+	background-color: #868086; 
+	font-family: 'Baumans Regular'; 
+	font-size: 16px; 
+	border-bottom: 1px solid #404040; 
+	border-right: 1px solid #666666;
+}
+
+#tdEmail {
+   width:221px;
+   border-bottom: 1px solid #666666; 
+   background: rgba(26, 0, 26, 0.7); 
+   color: grey;
+}
+
+#tdPhoneLbl {
+	width:61px;
+	height:31px;
+	background-color: #868086;
+	font-size: 16px; 
+	border-top: 1px solid #666666; 
+	border-right: 1px solid #666666;
+}
+
+#tdPhone {
+    width:221px;
+    background: rgba(26, 0, 26, 0.7); 
+    color: grey;
+}
+
+#tbdyPymtMethod {
+	height:29px;
+    background: rgba(26, 0, 26, 0.6);
+    border-bottom: 1px solid #4d4d4d; 
+    border-left: 1px solid grey; 
+    border-right: 1px solid grey;"
+}
+
+#trPymtMethod {
+	height:28px;
+	color: grey; 
+	font-size: 16px;
+}
+
+#tdPymtMethod {
+	width:679px;
+}
+
+#lblPymtMethod {
+	position: relative; 
+	left: 20px;
+}
+
+#tbdyTrackOrder {
+	height:52px;
+    background-color: transparent;
+    border-left: 1px solid grey; 
+    border-right: 1px solid grey;
+}
+
+#trackOrder {
+	position:relative; 
+	top:10px; 
+}
+
+#tdTrackOrder {
+	width:679px;
+}
+
+#divEmailAddress {
+   width: 221px; 
+   overflow: hidden; 
+   text-overflow: ellipsis; 
+   white-space: nowrap;
+}								
+
+#tbdyItemAndCost {
+	height:22px;
+	width:365px;
+}
+
+#trItemAndCost {
+	height:20px;
+	font-size:16px; 
+	background-color:#868086;
+}
+
+#tdItemLbl {
+	border-right: 1px solid #666666;
+	width: 206px;
+}
+
+#tdItemName {
+	width:215px;
+	
+}
+
+#tdItemCost {
+	width:150px;
+}
+
+#tdCostLbl {
+	width:159px;
+}
+
+#lblCost {
+	position: relative; 
+	left: 10px;
+}
+
+#tbdyCartInfo {
+	background: rgba(26, 0, 26, 0.7); 
+	width: 365px; 
+	overflow-y: scroll; 
+	font-size: 14px; 
+	height: 105px;
+	outline: thin solid #404040; 
+	color: grey;
+}
+
+#trOrderItems {
+	text-align: center; 
+	height: 20px;
+}
+
+#tbdyOrderPricing {
+	position: absolute; 
+	font-size: 12px;
+	height:83px;
+	width: 365px; 
+	background-color: #868086; 
+	outline: thin solid #404040;
+}
+
+#tbdyOrderPricing #pricingLbl {
+	width:215px;
+	text-align:right;
+}
+
+#tbdyOrderPricing #pricingData {
+	width:150px;
+}
+
+#grandTotal {
+	font-weight: bold;
+}
+
+#trVerticalSpace1 {
+ width:679px;
+ height:10px;	
+}
+
+#trVerticalSpace2 {
+	height:12px;
+}
+
+#trVerticalSpace3 {
+	height:3px;
+}
+
+#trVerticalSpace4 {
+	height:1px;
+}
+
+#divEmailToolTip {
+	position:absolute;
+	left:430px;
+	top:274px;
+	height:23px;
+	padding-top:2px;
+	background:#ffffcc;
+	border:1px solid #595959;
+	z-index:2;
+	font-size:15px;
+}
+

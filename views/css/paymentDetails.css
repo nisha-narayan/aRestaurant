@@ -1,0 +1,399 @@
+#loadingIconPymt {
+	position:absolute;
+	top:190px;
+	left:332px;
+	z-index:2;
+}
+
+.payment_details {
+    font-family: 'Baumans Regular' ;
+    position: relative;
+    left: 2px;
+    top: 28.7px;
+    width: 683px;
+    background-color: #000000;   
+    height:410px;
+    border-collapse: collapse;
+    border: 2px solid #595959;
+}
+
+ #pymtCover {
+    position:absolute;
+    left: 2px;
+    top: 28.7px;
+    width: 687px;
+    height:461px;
+    background:rgba(0, 0, 0, 0.8);  
+    z-index:1;
+  }
+  
+#tdPymtDetails {
+     width:683px;
+	 font-size: 20px; 
+	 color: #452440; 
+	 font-family: 'Space Age', cursive;
+}
+
+#tbdyPymtDetails {
+    background: #b3b3b3;
+}
+
+#pymtDetailsHeader {
+    background-color: #868086; 
+    width:683px;
+    border: 1px solid grey;  
+}
+
+.paymentFieldsLabel {
+	position:relative ;
+	left:10px;
+}
+
+.paymentFirstLastName {
+  position:relative;
+  left:20px;
+  background-color:lightgrey;
+  height:21px;
+}
+
+.addressInput {
+  position:relative;
+  left:30px;
+  background-color:lightgrey;
+  height:21px;	
+}
+
+.tdBillAddress {
+  border-right:1px solid #595959;
+}
+.tdBillAddressEmail {
+  border-right:1px solid #595959;
+  color:grey;
+}
+
+.address-header {
+color:#452440;
+background-color:#868086;
+}
+
+.addressLbl {
+display:inline-block;
+position:relative;
+left: 3px;
+width:110px;
+}
+
+
+
+#addressShipState {
+position:relative;
+left:30px;
+height:21px;
+width:85px;
+background-color:lightgrey;
+}
+
+#addressBillState {
+position:relative;
+left:30px;
+height:21px;
+width:85px;
+background-color:lightgrey;
+}
+
+#addressCity {
+position:relative;
+left:33px;
+background-color:lightgrey;
+height:21px;
+}
+
+#addressEmail {
+position:relative;
+left:34px;
+background-color:lightgrey;
+height:21px;	
+}
+
+#addressPhone {
+position:relative;
+left:33px;
+background-color:lightgrey;
+height:21px;
+width:100px;
+}
+
+#addressZipCode {
+position:relative;
+left:30px;
+background-color:lightgrey;
+height:21px;
+width:85px;
+}
+
+
+#card-number {
+  position:relative;
+  left:20px;
+  background-color:lightgrey;
+  font-size:14px;
+  height:21px;
+  width:173px;
+  font-color:red;
+  border-left:2px solid #999999;
+  border-top:2px solid #999999;
+  border-right:2px solid #f2f2f2;
+  border-bottom:2px solid #f2f2f2; 
+}
+
+#cardFieldsContainer {
+  position:absolute;
+  top:128px;
+  left:480px;
+  background-color:transparent;
+  height:50px;
+  width:176px;
+  z-index:2;
+}
+
+
+
+#expiration-date {
+  position:relative;
+  left:20px;
+  background-color:lightgrey;
+  height:21px;
+  width:63px;
+  border-left:2px solid #999999;
+  border-top:2px solid #999999;
+  border-right:2px solid #f2f2f2;
+  border-bottom:2px solid #f2f2f2; 
+}
+
+.cvvLabel {
+	position:relative ;
+	left:40px;	
+}
+
+#cvv {
+  position:relative;
+  left:0px;
+  background-color:lightgrey;
+  height:21px;
+  border-left:2px solid #999999;
+  border-top:2px solid #999999;
+  border-right:2px solid #f2f2f2;
+  border-bottom:2px solid #f2f2f2;
+}
+
+
+.removeCardIcon {
+  position:relative;
+  left:25px;
+  top:4px;
+  height:22px;
+  width:20px;
+  background:url(../images/removeIcon.png) no-repeat;
+}
+
+.removeCardIcon:hover  {
+   border:2px solid #774379 ;
+}
+
+.modalOkBtn {
+    position:relative;
+    top:33px;
+    border:2px solid #774379 ;
+    background-color: #452440 ;
+    border-spacing: 2px;
+    color:grey;
+    border:2px solid #585858 ;
+    border-radius:5px;  
+    box-shadow: 0 0 5px #585858 ;
+}
+
+.modalRemoveCardBtn {
+    position:relative;
+    top:30px;
+    border:2px solid #774379 ;
+    background-color: #452440 ;
+    border-spacing: 2px;
+    color:grey;
+    border:2px solid #585858 ;
+    border-radius:5px;  
+    box-shadow: 0 0 5px #585858 ;
+}
+
+#modalRemoveCardNo {
+	left:10px;
+}
+
+#place_order {
+    position: relative;
+    left: 291px;
+    top: 45px;
+    width: 100px;
+    background-color: #452440 ;
+    height:30px;
+    border-spacing: 2px;
+    color:grey;
+    border:2px solid #585858 ;
+    border-radius:5px;  
+    box-shadow: 0 0 10px #585858;
+}
+
+#tdPaywithCard {
+    width:325px;
+	position: relative; 
+	left: 3%; 
+}
+
+#tdFirstName{
+	width:100px;
+}
+
+#tdFirstNameInput {
+	width:254px;
+}
+
+#tdSelectCard {
+	width:325px;
+	position: relative; 
+	left: 3%;
+}
+
+#selectCard {
+	position: relative; 
+	width: 171px; 
+	left: 25px;
+	border: 1px solid grey;
+}
+
+#tdLastName {
+	width:100px;
+}
+
+#lastNameInput {
+	width:224px;
+}
+
+#tdCashOnDelivery {
+	width:325px;
+	position: relative; 
+	left: 3%;
+}
+
+#tdCardNum {
+	width:100px;
+}
+
+#tdCardNumInput {
+	width:224px;
+}
+
+#tdStoreCard {
+	width:325px;
+	position: relative; 
+	left: 3%;
+}
+
+#storeCardChkBox {
+	color: #595959;
+}
+
+#tdExpiration {
+	width:100px;
+}
+
+#tdExpiryInput {
+	width:40px;
+}
+
+#tdCvv {
+	width:50px;
+}
+
+#tdCvvInput {
+	width:20px;
+}
+
+#horizontalSpace1 {
+	width:30px;
+}
+
+#tbdyAddressDetail {
+	height:210px;
+	background-color:#8c8c8c; 
+	border-top: 1px solid #404040;
+}
+
+#tdAddressTitle {
+	width:50%;
+}
+
+#addressTitle {
+	color: #452440; 
+	font-weight: 300;
+}
+
+#addressSubTitle {
+	height:12px;
+	background-color: rgba(26, 0, 26, 0.7);
+}
+
+#tdSubTitle {
+	width:50%;
+	border-right: 1px solid grey; 
+	font-style: italic; 
+	color: grey;
+}
+
+#tdAddress {
+	width:339.5px;
+}
+
+#trContactDetail {
+	height:25px;
+	background-color: rgba(26, 0, 26, 0.7);
+	color:grey;
+}
+
+#tbdyOrderTotal {
+	width:683px;
+	height:16px;
+	border-top: 1px solid #404040; 
+	background: #000000; 
+	color: grey;
+}
+
+#tdOrderTotal {
+	width:683px;
+	font-style: bold;
+}
+
+#lblGrandTotal {
+	position: relative; 
+	left: 2%;
+}
+
+#verticalSpace1 {
+	height:20px;
+}
+
+#verticalSpace2 {
+	height:30px;
+}
+
+#verticalSpace3 {
+	height:2px;
+}
+#verticalSpace4 {
+	height:5px;
+}
+#verticalSpace5 {
+	height:6px;
+}
+#verticalSpace6 {
+	height:17px;
+}
+

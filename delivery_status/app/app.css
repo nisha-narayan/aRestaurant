@@ -1,0 +1,201 @@
+@font-face {
+    font-family: Baumans Regular;
+    src: url(Baumans-Regular.ttf);
+}
+
+@font-face {
+    font-family: Space Age;
+    src: url(SpaceAge.ttf);
+}
+
+#logOff {
+  position:absolute;
+  top:0px;
+  left:200px;
+  z-index:2;
+}
+
+.mainView {
+ position:fixed;
+ left:341.5px;
+ top:120px;
+ background:#000000;
+ border:1px solid grey;
+ border-radius:5px;
+ width: 234px;
+ height:338px;
+}
+
+
+thead, tbody {
+ display: block;
+}
+
+
+.deliverySignIn {
+position:relative;
+left:0px;
+top:0px;
+height:338px;
+width:234px;
+border-radius:5px;
+}
+
+.signInDetails {
+  color:grey;
+  text-align:center;
+  font-family:'Baumans Regular';
+}
+
+.signInInput {
+ width:100px;
+}
+
+.signInHeader {
+    position:relative;
+    top:3px;
+    border-radius:5px;
+    background-color:#6b616b;
+    color:#130613;
+    height:30px;
+    font-family: "Space Age"; 
+    font-size: 22px; 
+}
+
+.exitRegion {
+    background:#130613;
+    height:29px;
+    border-radius:5px;
+    border-top:1px solid #595959;
+}
+
+.deliveryStatus_header {
+    background-color:rgba(39, 12, 39, 0.4);
+    color:grey;
+    font-family: "Baumans Regular"; 
+    font-size: 16px;  
+    text-align:center;
+    border-collapse:collapse;
+}
+
+.deliveryPerson_header {
+    background-color:#6b616b;
+    color:#262626;
+    font-family: "Baumans Regular"; 
+    font-size: 18px;  
+    top:3px;
+    text-align:center;
+}
+
+.delivery_status {
+position:relative;
+left:0px;
+top:0px;
+width:234px;
+height:338px;
+}
+
+#deliveryOrders {
+width:234px;
+height:280px;
+overflow-y:scroll;
+}
+
+#orderList {
+	height:30px;
+}
+
+.buttons {
+ margin:5px;
+ background:#0d0d0d;
+ height:25px;
+ color:grey;
+ border-radius:3px;
+ border:2px solid #595959;
+}
+
+.Highlight {
+ background:green;
+ color:#001a00;
+}
+
+.modal-body {
+  top:33.8%;
+  left:29%;
+  height:127px;
+  width:130px;
+  position:absolute;
+  z-index:1;
+  background-color:#000d1a;
+  border-top: 1px solid #504950;
+  border-left: 2px solid #504950;
+  border-right: 2px solid #504950;
+  border-bottom: 2px solid #504950;
+  border-bottom-right-radius:1em;
+  border-bottom-left-radius:1em;
+}
+
+.phoneIcon {
+ position:relative;
+ top:2px;
+}
+
+.modal-header {
+  position:relative;
+  top:0px;
+  left:0px;
+  height:22px;
+  width:130px;
+  z-index:2;
+  background-color:#333333;
+  border-top-left-radius:1em;
+  border-top-right-radius:1em; 
+}
+
+.modal-header-background {
+  position:absolute;
+  top:30%;
+  left:29%;
+  height:22px;
+  width:130px;
+  font-family: "Great Vibes" , cursive; 
+  z-index:2;
+  background-color:#333333;
+  border-top: 2px solid #504950;
+  border-left: 2px solid #504950;
+  border-right: 2px solid #504950;
+  border-bottom:2px solid #504950;
+  border-top-left-radius:1em;
+  border-top-right-radius:1em;
+}
+
+
+
+.modal-errorIcon {
+  position:relative;
+  top:10px;
+  left:10px;
+}
+
+.modal-validationText {
+  position:absolute;
+  top:12px;
+  left:0px;
+  height:40px;
+  width:130px;
+  text-align:center;
+  color:#999999;
+  font-family:'Calibri';
+}
+
+.modalCloseBtn {
+    position:absolute;
+    color:grey;
+    z-index:2;
+    top:-5px;
+    left:102px;
+}
+
+.orderSelected {
+  background-color:rgba(39, 12, 39, 0.7);
+}

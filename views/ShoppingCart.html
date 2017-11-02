@@ -1,0 +1,44 @@
+
+<div class = "hiName"   > Hi {{customerFirstName }}</div>
+<img id="downArrow0" ng-src="images/downArrow3.png" ng-click="showProfileOptions()" ng-hide = "hideDownArrow" />
+
+<table id = "cart_position" >
+<thead id = "cart_header" >
+
+<td ></td> 
+<td id = "tdCartTitle" > 
+<center> R e v i e w   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O r d e r  </center>       </td>
+<td ></td>								
+</thead>
+
+<tr class = "column_names">
+				<td id = "indexLbl" >Index</td>
+				<td id = "nameLbl" >Name</td>
+				<td id = "sizeLbl" >Size</td>
+				<td id = "quantityLbl">Quantity </td>
+				<td id = "costLbl">Cost</td>
+				<td id = "removeLbl">Remove</td>
+</tr>
+<tbody id = "cart">
+<tr   ng-class = "{menuItem:true}" ng-repeat = "menuItems in CartItems"  >
+<td id = "indexData" >  {{$index + 1}}</td>
+<td id = "nameData" > <center> {{menuItems.Name}} </center> </td>
+<td id = "sizeData" > <center>{{menuItems.SelectedSize}} </center></td>
+<td id = "quantityData" > <label> {{menuItems.SelectedQuantity}} </label>  </td>
+<td id = "costData" > {{(menuItems.Cost[menuItems.SelectedSize] * menuItems.SelectedQuantity ).toFixed(2) }} </td>
+<td id = "removeData" > <button class = "removeIcon" ng-click = "removeMenuItem(menuItems.Name)"> </button>   </td>	            
+</tr>
+
+</tbody>
+<tbody id = costInfo" >
+<tr id = "trVertSpace1"> </tr>
+<tr> <td>  <label id = "tdTotalCostLbl" > Total Cost </label>  </td> <td colspan = "2" > <label id = "tdTotalCostData" >{{calcTotalOrderCost();}} </label></td> </tr>
+<tr> <td> <label id = "tdShipAndHandlingLbl">  Shipping and Handling </label> </td> <td colspan = "2" ><label id = "tdShipAndHandleData" >{{Shipping_Handling}} </label></td> </tr>
+<tr> <td> <label id = "tdTaxesLbl" >  Taxes </label> </td> <td colspan = "2" ><label id = "taxesData" > {{Taxes}} </label> </td> </tr>
+<tr id = "trVertSpace2" >  </tr>
+<tr> <td> <label id = "tdGrandTotalLbl"> Grand Total </label> </td> <td colspan = "2" > <label id = "grandTotalLbl"> {{grandTotal();}} </label></td> </tr>
+</tbody>
+</table>
+
+<button id = "cart_confirm" type ="submit" ng-click = "confirmOrder();">Confirm</button> 
+<button id = "cart_modify" type ="submit" ng-click = "modifyOrder();" >Modify</button> 

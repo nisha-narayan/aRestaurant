@@ -1,0 +1,295 @@
+/* Sign In page */
+
+.sign_in {
+    font-family: 'Baumans Regular' ;
+    position: relative;
+    left: 2px;
+    top: 28.7px;
+    width: 683px;
+    height:410px;
+    border-collapse: collapse;
+    border:2px solid #595959;
+}
+
+.sign_in thead {
+	background-color: #868086; 
+}
+
+#signInNew {
+	position:relative;
+}
+#loadingIcon {
+	position: absolute; 
+	top: 230px; 
+	left: 332px; 
+	z-index: 2;
+}
+
+#noAccountChkBox {
+	position: relative; 
+	left: 10px;
+}
+
+#tbdyRegistration {
+	height:197px;
+    border-left: 2px solid grey;
+    border-right: 2px solid grey; 
+    border-bottom: 1px solid grey; 
+	border-top: 2px solid grey; 
+	background-color: rgba(0, 0, 0, 0.8); 
+	color: grey;	
+}
+
+#leftBorderContainer {
+	height:231px;
+	width:210px;
+	position: absolute; 
+	left: 5px; 
+	top: 208px; 
+	z-index: 1; 
+	background: transparent;
+}
+
+#rightBorderContainer {
+	height:231px;
+	width:200px;
+	position: absolute; 
+	left: 482px; 
+	top: 208px; 
+	z-index: 1; 
+	background: transparent;
+}
+
+#leftBorderImage {
+	height: 229px; 
+	width: 200px;
+}
+
+#borderLeftDesignGlow {
+	position: absolute; 
+	left: 0px; 
+	top: 0px; 
+	z-index: -1;
+}
+
+
+
+#rightBorderImage {
+	height: 229px; 
+	width: 200px;
+}
+
+#borderRightDesignGlow {
+    position: absolute; 
+    left: 0px; 
+	top: 0px; 
+    z-index: -1;
+}
+
+#registerConfirmation {
+	height:233px;
+    background:rgba(0, 0, 0, 0.8); 
+    color: grey;
+    border: 1px solid grey;
+}
+
+#registerSuccess {
+	width:683px;
+}
+
+
+#signIn_header {
+	font-size: 20px; 
+	color: #452440; 
+	font-family: 'Space Age';
+	background-color: #868086; 
+    width:683px;
+    border: 1px solid grey;  
+}
+
+#forgotPassword {
+	position: relative; 
+	left: 320px;
+}
+
+
+#tbdyLogin {
+	height:155px;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#lblUsername {
+	width: 100px; 
+	position: relative; 
+	left: 178px; 
+	color: grey;
+}
+
+#lblPassword {
+	width:100px;
+    position: relative; 
+    left: 178px; 
+    color: grey;
+}
+
+#usernameInput {
+	position: relative; 
+	left: 200px;
+}
+
+#passwordInput {
+	position: relative; 
+	left: 201px;
+}
+
+#loginError {
+	color:red;
+}
+
+#tdLoginError {
+	width:181px;
+}
+
+#tdLogin {
+	width:500px;
+}
+
+#tbdyPasswordReset {
+	height:150px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#lblPwdReset {
+	width:683px;
+	color:grey;
+}
+
+#tbdyNewPassword {
+	height:155px;
+    border: 1px solid grey; 
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#newPwdInput {
+	width:683px;
+	color:grey;
+}
+
+#tdReset {
+	width:683px;
+}
+
+#noAccountYet {
+	border-left: 2px solid grey; 
+	border-right: 2px solid grey; 
+	background-color: #A4A792;
+	height:35px;
+}
+
+#registrationContainer {
+ position:absolute;
+ left:5px;
+ z-index:1;
+ top:243px;
+ height:192px;
+ width:677px;
+ background:rgba(0,0,0,0.8); 
+}
+
+#registerLoginLbl {
+  display:inline-block;
+  border:1px solid transparent;
+  width:80px;
+  position:relative;
+  left:10px;
+}
+
+#back {
+    position: relative;
+    left: 291px;
+    top: 45px;
+    width: 100px;
+    background-color: #452440 ;
+    height:30px;
+    border-spacing: 2px;
+    color:grey;
+    border:2px solid #585858 ;
+    border-radius:5px; 
+    box-shadow: 0 0 10px #585858; 
+}
+
+#tdRegister {
+	width:340.5px;
+}
+
+.trVerticalSpace1 {
+	height:20px;
+}
+
+.trVerticalSpace2 {
+	height:10px;
+}
+
+.trVerticalSpace3 {
+	height:15px;
+}
+
+.trVerticalSpace4 {
+	height:5px;
+}
+
+.trVerticalSpace5 {
+	height:6px;
+}
+
+.trVerticalSpace6 {
+	height:70px;
+}
+#tdNoAccount {
+	width:681px;
+}
+
+#tdSignIn {
+	width:681px;
+}
+
+.registerLogInInput {
+	position:relative;
+	left:30px;
+	background:#b3b3b3;
+}
+
+.registerAddressLbl {
+  display:inline-block;
+  width:105px;
+  border:1px solid transparent;
+}
+
+.registerAddressInput {
+  position:relative;
+  left:26px;
+  background:#b3b3b3;
+}
+
+#resetEmailSuccess {
+	color:#004d00;
+}
+
+#newPasswordLbl {
+	display:inline-block;
+	width:200px;
+	border:1px solid transparent;
+}
+
+.OkBtnModal {
+    position:relative;
+    border:2px solid #774379 ;
+    background-color: #452440 ;
+    border-spacing: 2px;
+    color:grey;
+    border:2px solid #585858 ;
+    border-radius:5px;  
+    box-shadow: 0 0 5px #585858 ;
+}
+
+

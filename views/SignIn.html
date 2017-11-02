@@ -1,0 +1,307 @@
+<img id="loadingIcon" ng-src="images/loading1.gif"
+	ng-show="showLoadingIcon" />
+<table class="sign_in">
+	<thead ng-hide="hideSignInHeader">
+		<td></td>
+		<td id="signIn_header">
+			<center>Sign &nbsp; In &nbsp; Your &nbsp; Account</center>
+		</td>
+		<td></td>
+	</thead>
+	<thead ng-hide="hidePasswordResetHeader">
+		<td></td>
+		<td id="signIn_header">
+			<center>Password &nbsp; Reset</center>
+		</td>
+		<td></td>
+	</thead>
+	<tbody id="tbdyLogin" ng-hide="hideLoginUser">
+		<tr class = "trVerticalSpace2">
+		</tr>
+		<tr>
+			<td id="tdLogin"><label id="lblUsername"> Username </label> <input
+				id="usernameInput" type=text ng-model="customerLogin.Username" /></td>
+			<td id="tdLoginError"></td>
+		</tr>
+		<tr>
+			<td id="tdLogin"><a id="forgotPassword" href=''
+				ng-click="forgotUsername()"> Forgot username ? </a></td>
+			<td id="tdLoginError"><label id="loginError"
+				ng-hide="hideIncorrectUsername">
+					<center>Incorrect Username</center>
+			</label></td>
+		</tr>
+		<tr class = "trVerticalSpace4">
+		</tr>
+		<tr>
+			<td id="tdLogin"><label id="lblPassword"> Password </label> <input
+				id="passwordInput" type=password ng-model="customerLogin.Password" /></td>
+			<td id="tdLoginError"><label id="loginError"
+				ng-hide="hideIncorrectPassword">
+					<center>or Password</center>
+			</label></td>
+		</tr>
+		<tr>
+			<td id="tdLogin"><a id="forgotPassword" href=''
+				ng-click="forgotPassword()"> Forgot password ? </a></td>
+			<td id="tdLoginError"></td>
+		</tr>
+		<tr class = "trVerticalSpace2">
+		</tr>
+		<tr>
+			<td id = "tdSignIn"  colspan="2">
+				<center>
+					<button id = "signInNew" class="buttons" 
+						ng-click="signInUser()">Sign In</button>
+				</center>
+			</td>
+		</tr>
+	</tbody>
+
+	<tbody id="tbdyPasswordReset" ng-hide="hidePasswordReset">
+		<tr class = "trVerticalSpace3" >
+		</tr>
+		<tr>
+			<td id="lblPwdReset">
+				<center>{{displayMessage}}</center>
+			</td>
+		</tr>
+		<tr class = "trVerticalSpace2" >
+		</tr>
+		<tr>
+			<td>
+				<center>
+					<input type="text" ng-model="customerEmail"> </input>
+				</center>
+			</td>
+		</tr>
+		<tr class = "trVerticalSpace3" >
+		</tr>
+		
+		<tr>
+			<td>
+				<center>
+					<button class="buttons" ng-hide = "hideBtnPwdReset" ng-click="sendPasswordResetLink()">
+						Send</button>
+					<button class="buttons" ng-hide = "hideBtnSendUsername" ng-click="sendUsername()">
+						Send</button>
+				</center>
+			</td>
+		</tr>
+		<tr class = "trVerticalSpace4" >
+		</tr>
+		<tr>
+			<td ng-style="resetEmailStyle">
+				<center>{{resetEmailResult}}</center>
+			</td>
+		</tr>
+	</tbody>
+
+	<tbody id="tbdyNewPassword" ng-hide="hideNewPassword">
+		<tr class = "trVerticalSpace3" >
+		</tr>
+		<tr ng-hide="hideEnterNewPassword">
+			<td id="newPwdInput">
+				<center>
+					<label id="newPasswordLbl"> Enter new Password </label> <input
+						type="password" ng-model="newPassword" />
+				</center>
+			</td>
+		</tr>
+		<tr class = "trVerticalSpace2" >
+		</tr>
+		<tr ng-hide="hideConfirmNewPassword">
+			<td id="newPwdInput">
+				<center>
+					<label id="newPasswordLbl"> Confirm new Password </label> <input
+						type="password" ng-model="confirmPassword" />
+				</center>
+			</td>
+		</tr>
+		<tr class = "trVerticalSpace3" >
+		</tr>
+		<tr>
+			<td id="tdReset" ng-hide="hideReset">
+				<center>
+					<button class="buttons" ng-click="resetPassword()">Reset</button>
+				</center>
+			</td>
+		</tr>
+		<tr class = "trVerticalSpace4" >
+		</tr>
+		<tr>
+			<td id="tdReset" ng-style="resetPasswordStyle">
+				<center>{{resetPasswordResult}}</center>
+			</td>
+		</tr>
+		<tr class = "trVerticalSpace3" >
+		</tr>
+		<tr>
+			<td id="tdReset" ng-hide="hideSignInButton">
+				<center>
+					<button class="buttons" ng-click="signIn()">Sign In</button>
+				</center>
+			</td>
+		</tr>
+
+	</tbody>
+
+	<tbody id="noAccountYet" ng-hide="hideRegistration">
+
+		<tr class = "trVerticalSpace5" >
+		</tr>
+		<tr>
+			<td id = "tdNoAccount"  colspan="2">
+				<center>
+					No account yet? <input id="noAccountChkBox" type="checkbox"
+						ng-model="noAccountYet"
+						ng-click="enableRegistration(noAccountYet)" />
+				</center>
+			</td>
+		</tr>
+
+	</tbody>
+
+	<div id="registrationContainer" ng-style="registrationContainer"
+		ng-hide="hideRegistrationContainer"></div>
+	<tbody id="tbdyRegistration" ng-hide="hideRegistration">
+		<tr class = "trVerticalSpace3"  >
+		</tr>
+		<tr>
+			<td id="tdRegister"><label id="registerLoginLbl">
+					First Name </label> <input type="text" ng-model="customer.FirstName"
+				class="registerLogInInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+			<td id="tdRegister"><label class="registerAddressLbl">
+					Address Line 1 </label> <input type="text"
+				ng-model="customer.Address.AddressLine1"
+				class="registerAddressInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+		</tr>
+		<tr>
+			<td id="tdRegister"><label id="registerLoginLbl"> Last
+					Name </label> <input type="text" ng-model="customer.LastName"
+				class="registerLogInInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+			<td id="tdRegister"><label class="registerAddressLbl">
+					Address Line 2 </label> <input type="text"
+				ng-model="customer.Address.AddressLine2"
+				class="registerAddressInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+		</tr>
+		<tr>
+			<td id="tdRegister"><label id="registerLoginLbl">
+					Username </label> <input type="text" ng-model="customer.Username"
+				class="registerLogInInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+			<td id="tdRegister"><label class="registerAddressLbl">
+					City </label> <input type="text" ng-model="customer.Address.City"
+				class="registerAddressInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+		</tr>
+		<tr>
+			<td id="tdRegister"><label id="registerLoginLbl">
+					Password </label> <input type="password" ng-model="customer.Password"
+				class="registerLogInInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+			<td id="tdRegister"><label class="registerAddressLbl">
+					State </label> <input type="text" ng-model="customer.Address.State"
+				class="registerAddressInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+		</tr>
+		<tr>
+			<td id="tdRegister"><label id="registerLoginLbl">
+					Email </label> <input type="email" pattern="[^ @]*@[^ @]*.com"
+				ng-model="customer.Email" class="registerLogInInput"
+				ng-disabled="registerDisabled" ng-style="registrationField" /></td>
+			<td id="tdRegister"><label class="registerAddressLbl">
+					Zip Code </label> <input type="text" ng-model="customer.Address.ZipCode"
+				class="registerAddressInput" ng-disabled="registerDisabled"
+				ng-style="registrationField" /></td>
+		</tr>
+		
+		<tr class = "trVerticalSpace2" >
+		</tr>
+		<tr>
+			<td colspan="2">
+				<center>
+					<button class="buttons" ng-click="saveUserDetails()">
+						Register</button>
+				</center>
+			</td>
+		</tr>
+	</tbody>
+
+
+	<tbody id="registerConfirmation" ng-hide="hideRegistrationSuccess">
+		<tr class = "trVerticalSpace6" >
+		</tr>
+		<tr>
+			<td id="registerSuccess">
+				<center>You are registered Successfully.</center>
+			</td>
+		</tr>
+		<tr>
+			<td id="registerSuccess">
+				<center>Please sign-in using your login credentials to
+					Continue.</center>
+			</td>
+		</tr>
+
+	</tbody>
+
+</table>
+
+	<div id="leftBorderContainer" ng-hide="hideBorderLeftCanvas">
+	    <canvas id="borderLeftDesignGlow"  height = "230px" width = "210px"> </canvas>
+		<img id="leftBorderImage"  ng-src="images/border_left.png" />
+	</div>
+	<div id="rightBorderContainer" ng-hide="hideBorderRightCanvas">
+	    <canvas id="borderRightDesignGlow"  height = "230px" width = "200px" > </canvas>
+		<img id="rightBorderImage" ng-src="images/border_right.png" />
+	</div>
+	
+<button id="back" type="submit" ng-click="backToMenu()">Back to
+	Menu</button>
+
+<script type="text/ng-template" id="signInValidation.html"  > 
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+      <img class = "modal-errorIcon" src = "images/errorIcon2.png" />
+       <div class = "modal-validationText"> {{modalValidationText}} </center>
+     <center><button class="OkBtnModal" "type="button" ng-click="hideModal()" ng-style = "btnPosition"> OK</button></center>
+     </div>
+</script>
+
+<div id="forgotUsernameContainer"  ng-hide = "true" > 
+     <div style = "position:absolute;height:325px;width:650px;top:0px;left:0px;background:#595959;border:2px solid #452440;margin:3px;">
+     <div style = "font-family:Calibri;font-size:20px;height:30px;background-color:#868086;border-bottom:2px solid #452440;"> <center style = "position:relative;top:2px;color:#452440;font-weight:bold;" > A r o m a </center></div>
+      <div style = "height:80px;width:650px;"> </div>
+      <div style = "color:#452440;font-size:16px;"> <center style = "position:relative;top:90px;"> Your username is  {{ forgotUsername }}  </center> </div> 
+      <div style = "height:85px;width:650px;"></div>
+      <div style = "color:#262626;text-align:justify;width:650px;">This email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed. 
+      If you have received this email in error please notify the system manager. 
+      This message contains confidential information and is intended only for the individual named. 
+      If you are not the named addressee you should not disseminate, distribute or copy this e-mail. 
+      Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system. 
+      If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</div>
+     </div>
+</div>
+
+<div id="forgotPasswordContainer"  ng-hide = "true" > 
+     <div style = "position:absolute;height:350px;width:650px;top:0px;left:0px;background:#595959;border:2px solid #452440;margin:3px;">
+      <div style = "font-family:Calibri;font-size:20px;height:30px;background-color:#868086;border-bottom:2px solid #452440;"> <center style = "position:relative;top:2px;color:#452440;font-weight:bold;" > A r o m a </center></div>
+      <div style = "height:75px;width:650px;"> </div>
+      <div style = "color:#452440;font-size:16px;"> <center> Your password reset link is given below  </center> </div> 
+      <div style = "height:5px;width:650px;"> </div>
+      <div style = "color:#452440;font-size:14px;width:650px"> <center> <a style = "color:#452440;" ng-href = "{{passwordResetLink}}">  {{ passwordResetLink }} </a> </center> </div> 
+      <div style = "height:80px;width:650px;"></div>
+      <div style = "color:#262626;text-align:justify;width:650px;"> This email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed. 
+      If you have received this email in error please notify the system administrator. 
+      This message contains confidential information and is intended only for the individual named. 
+      If you are not the named addressee you should not disseminate, distribute or copy this e-mail. 
+      Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system. 
+      If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.</div>
+     </div>
+</div>

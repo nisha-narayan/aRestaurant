@@ -1,0 +1,265 @@
+<body>
+	<div class="hiName">Hi {{customerFirstName }}</div>
+	<img id="downArrow0" ng-src="images/downArrow3.png" ng-click="showProfileOptions()" ng-hide = "hideDownArrow" />
+	<img id = "loadingIconPymt"  ng-src = "images/loading1.gif" ng-show = "showLoadingIcon"/>
+	<div id = "cardFieldsContainer" ng-hide = "hideCardFieldContainer" > </div>
+	<div id="pymtCover"  ng-hide="hidePymtContainer" ></div>
+		<table class="payment_details">
+			<thead id="pymtDetailsHeader">
+				<td></td>
+				<td id = "tdPymtDetails">
+					<center>P a y m e n t &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						D e t a i l s</center>
+				</td>
+				<td></td>
+			</thead>
+
+			<tbody id = "tbdyPymtDetails" >
+				<tr id = "verticalSpace1" >
+				</tr>
+				<tr>
+					<td id = "tdPaywithCard" >
+						<input type="radio" ng-model="customerPaymentInfo.paymentMethod"
+						value="Card" ng-click="enableCardFields()" /> Pay with Card
+					</td>
+					<td id = "tdFirstName" ><label ng-class="{paymentFieldsLabel:true}">
+							First Name </label></td>
+					<td id = "tdFirstNameInput" colspan="3"><input
+						ng-model="billingFirstName" type=text
+						ng-class="{paymentFirstLastName:true}" /></td>
+					<td id = "horizontalSpace1"></td>
+				</tr>
+
+				<tr id = "verticalSpace2" >
+					<td id = "tdSelectCard" >
+						<select id = "selectCard" ng-model="selectedCard"
+						ng-init="selectedCard = storedCards[0].Name"
+						ng-disabled="storedMethodDisabled"
+						ng-style="storedMethodBackgroundColor"
+						ng-change="isCardSelected()">
+							<option ng-repeat="card in storedCards track by card.Token" value="{{card.Name}}">{{card.Name}}</option>
+					</select> <button class="removeCardIcon"
+						ng-click="removeCard(selectedCard)" ng-show="showRemoveCardIcon" />
+					</td>
+
+					<td id = "tdLastName" ><label ng-class="{paymentFieldsLabel:true}">
+							Last Name </label></td>
+					<td id = "lastNameInput" colspan="3"><input
+						ng-class="{paymentFirstLastName:true}" type="text"
+						ng-model="billingLastName" /></td>
+					<td id = "horizontalSpace1" ></td>
+				</tr>
+				<tr>
+					<td id = "tdCashOnDelivery" ><input
+						type="radio" ng-model="customerPaymentInfo.paymentMethod"
+						value="Cash" ng-click="disableCardFields()" /> Cash on Delivery</td>
+					<td id = "tdCardNum"><label
+						for "card-number" ng-class="{paymentFieldsLabel:true}">
+							Card Number </label></td>
+					<td id = "tdCardNumInput" colspan="3">
+						<div id="card-number"  ng-style="cardFieldBackgroundColor" 
+							 ng-disabled="cardFieldsDisabled">
+						</div>
+						
+					</td>
+					<td id = "horizontalSpace1" ></td>
+				</tr>
+				<tr id = "verticalSpace2" >
+					<td id = "tdStoreCard" ><input id = "storeCardChkBox" 
+					   ng-model = "storeCard" type="checkbox" ng-disabled="disableStoreCard" /> <label
+						ng-style="storeCardStyle"> Store
+							card for future orders </label></td>
+					<td id = "tdExpiration" ><label
+						for "expiration-date" ng-class="{paymentFieldsLabel:true}">
+							Expiry Date </label></td>
+
+					<td id = "tdExpiryInput" >
+						<div id="expiration-date" ng-disabled="cardFieldsDisabled"
+							ng-style="cardFieldBackgroundColor" ></div>
+					</td>
+					<td id = "tdCvv" ><label for "cvv" ng-class="{cvvLabel:true}">
+							Cvv </label></td>
+					<td id = "tdCvvInput" >
+						<div id="cvv" ng-disabled="cardFieldsDisabled"
+							ng-style="cardFieldBackgroundColor"></div>
+					</td>
+					<td id = "horizontalSpace1"></td>
+				</tr>
+
+				<tr id="verticalSpace6">
+				</tr>
+			</tbody>
+
+
+			<tbody id = "tbdyAddressDetail" >
+
+				<tr class="address-header" >
+					<td></td>
+					<td id = "tdAddressTitle" >
+						<center id = "addressTitle">Billing
+							Address</center>
+					</td>
+					<td id = "tdAddressTitle" >
+						<center id = "addressTitle">Shipping
+							Address</center>
+					</td>
+				</tr>
+				<tr id = "addressSubTitle" >
+					<td></td>
+					<td id = "tdSubTitle" >
+						<center>Billing address must match card</center>
+					</td>
+					<td id = "tdSubTitle" > <center>
+							<input type="checkbox" ng-model="sameAsBillingChecked"
+								ng-disabled="sameAsBillingDisabled"
+								ng-click="disableShippingAddress(sameAsBillingChecked)">
+							Same as billing address
+						</center></td>
+				</tr>
+
+				<tr id="verticalSpace5">
+					<td></td>
+					<td ng-class="{tdBillAddress:true}"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id = "tdAddress" 
+						ng-class="{tdBillAddress:true}"><label  class="addressLbl"> Address Line 1 </label> <input
+						ng-model="billAddressLine1"
+						type="text" ng-disabled="billingAddressDisabled" ng-class="{addressInput:true}"
+						ng-style="billAddressBackgroundColor" />
+					</td>
+					<td id = "tdAddress"  >
+					    <label class="addressLbl" >
+					    Address Line 1 </label> <input type="text"
+						ng-model="customerPaymentInfo.deliveryAddress.shipAddressLine1" ng-class="{addressInput:true}"
+						ng-disabled="sameAsBillingChecked"
+						ng-style="shipAddressBackgroundColor" /></td>
+				</tr>
+				<tr id = "verticalSpace2" >
+					<td></td>
+					<td id = "tdAddress" 
+						ng-class="{tdBillAddress:true}">
+						<label class="addressLbl" >
+						Address Line 2 </label> <input
+						ng-model="billAddressLine2"
+						type="text" ng-disabled="billingAddressDisabled" ng-class="{addressInput:true}"
+						ng-style="billAddressBackgroundColor" />
+					</td>
+					<td id = "tdAddress"  >
+					  <label class="addressLbl" >
+					  Address Line 2 </label> <input type="text"
+						ng-model="customerPaymentInfo.deliveryAddress.shipAddressLine2" ng-class="{addressInput:true}"
+						ng-disabled="sameAsBillingChecked"
+						ng-style="shipAddressBackgroundColor" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td id = "tdAddress" 
+						ng-class="{tdBillAddress:true}"><label class="addressLbl" > City </label><input
+						ng-model="billCity" type="text" id = "addressCity"
+						ng-disabled="billingAddressDisabled"
+						ng-style="billAddressBackgroundColor" />
+					</td>
+					<td id = "tdAddress" ><label class="addressLbl" >City </label><input type="text"
+						ng-model="customerPaymentInfo.deliveryAddress.shipCity" id =  "addressCity"
+						ng-disabled="sameAsBillingChecked"
+						ng-style="shipAddressBackgroundColor" /></td>
+				</tr>
+				<tr id = "verticalSpace2">
+					<td></td>
+					<td 
+						ng-class="{tdBillAddress:true}"><label class="addressLbl" >State </label>
+					<input ng-model="billState" type="text" id = "addressBillState"
+						ng-disabled="billingAddressDisabled"
+						ng-style="billAddressBackgroundColor" />
+					</td>
+					<td  ><label class="addressLbl" >
+						State </label> 
+						<input ng-model="customerPaymentInfo.deliveryAddress.shipState" type="text" id = "addressShipState"
+						ng-disabled="sameAsBillingChecked"
+						ng-style="shipAddressBackgroundColor" />
+						
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td 
+						ng-class="{tdBillAddress:true}"><label class="addressLbl" >Zip Code </label> <input
+						ng-model="billZipCode" type="text"
+						id = "addressZipCode"
+						ng-disabled="billingAddressDisabled"
+						ng-style="billAddressBackgroundColor" />
+					</td>
+					<td> <label class="addressLbl" > Zip Code </label> <input type="text"
+						ng-model="customerPaymentInfo.deliveryAddress.shipZipCode"
+						id = "addressZipCode"
+						ng-disabled="sameAsBillingChecked"
+						ng-style="shipAddressBackgroundColor" />
+					</td>
+				</tr>
+				<tr id="verticalSpace4">
+					<td></td>
+					<td ng-class = "{tdBillAddress:true}"></td>
+					<td></td>
+				</tr>
+
+				<tr id = "trContactDetail" >
+					<td></td>
+					<td ng-class="{tdBillAddressEmail:true}">
+						<label class="addressLbl" >
+						e-mail </label><input type="email" pattern="[^ @]*@[^ @]*.com" id = "addressEmail"
+						ng-model="customerPaymentInfo.customerEmail"
+					    ng-class = "{addressInput:true}" />
+					</td>
+					<td><label class="addressLbl" >Phone </label><input 
+						type="tel" ui-mask="999-999-9999" ng-model="customerPaymentInfo.customerPhone" id = "addressPhone"
+					 />
+					</td>
+				</tr>
+
+			</tbody>
+
+			<tbody id = "tbdyOrderTotal" ng-controller="cartappController">
+				<tr id = "verticalSpace3">
+				</tr>
+				<tr>
+					<td id = "tdOrderTotal">
+						<center>
+							<label> Order Total </label> <label id = "lblGrandTotal" class="shimmer"> {{grandTotal();}}
+							</label>
+						</center>
+					</td>
+
+				</tr>
+
+			</tbody>
+		</table>
+
+	<button id="place_order" ng-click = "placeOrder()"> Place Order </button>
+	<script type="text/ng-template" id="modalValidation.html">
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+     <img class = "modal-errorIcon" src = "images/errorIcon2.png"/>
+       <div class = "modal-validationText" > {{modalValidationText }}</div>
+     <center><button class="modalOkBtn" "type="button" ng-click="hideModal()">OK</button></center>
+     </div>
+    </script>
+
+	<script type="text/ng-template" id=cardRemoveConfirmation.html>
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+     <img class = "modal-errorIcon" src = "images/errorIcon2.png"/>
+       <div class = "modal-validationText" > {{modalValidationText }}</div>
+        <center>
+       <button class = "modalRemoveCardBtn" type="button" ng-click="hideModalYes()">Yes</button>
+       <button id = "modalRemoveCardNo" class ="modalRemoveCardBtn"  type="button" ng-click="hideModalNo()">No</button>
+         </center>
+      </div>
+    </script>
+
+
+</body>

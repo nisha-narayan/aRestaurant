@@ -1,0 +1,119 @@
+<div class="hiName">Hi {{customerFirstName }}</div>
+<img id="downArrow0" ng-src="images/downArrow3.png" ng-click="showProfileOptions()" ng-hide = "hideTrackDownArrow" />
+
+<div class="track_order">
+	<div class="track_order_header">T r a c k &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O r d e r</div>
+
+	<div class="trackingPhasesContainer"></div>
+
+
+	<div class="trackOrderPlaced" ng-style="focusOrderPlaced"
+		ng-show="showOrderPlaced">
+		<label id="lblOrderPlaced" class="trackOrderLabels"> Order
+			Placed </label> <img id="orderPlaced" ng-src="images/orderPlacing.gif" />
+	</div>
+
+	<div id="orderPlacedTime">{{orderPlacedTime}}</div>
+
+
+
+	<div id="trackPreparationContainer" ng-style="focusPreparation"
+		ng-show="showPreparation">
+		<label class="trackOrderLabels"> Preparation </label> <img
+			id="prepFire" ng-src="images/fire.gif" /> <img id="prepKettle"
+			ng-src="images/kettle.png" /> <img id="prepPatch1"
+			ng-src="images/blkSquare.png" />
+		<!-- <img id = "prepPatch2" ng-src = "images/blkSquare.png"  /> -->
+		<img id="prepChef" ng-src="images/chef.gif" /> <img id="prepPan"
+			ng-src="images/pan.gif" />
+	</div>
+
+
+
+	<div class="trackQualityCheck" ng-style="focusQualityCheck"
+		ng-show="showQualityCheck">
+		<label id="lblQualityCheck" class="trackOrderLabels"> Quality
+			Check </label> <img id="qualityCheck" ng-src="images/qualityCheck.gif" />
+	</div>
+
+
+	<div class="trackOutForDelivery" ng-style="focusOutForDelivery"
+		ng-show="showOutForDelivery">
+		<label id="lblOutForDelivery" class="trackOrderLabels"> Out
+			for Delivery </label> <img id="delivery" ng-src="images/delivery.gif" />
+	</div>
+
+	<div id="orderId">Order # {{displayOrderId}}</div>
+
+	<!-- Tracking Bar Labels -->
+	<label id="orderPlacedBarLabel" class="trackingBarLabels"
+		ng-show="showOrderPlacedLabel"> Order Placed </label> <label
+		id="preparationBarLabel" class="trackingBarLabels"
+		ng-show="showPreparationLabel"> Preparation </label> <label
+		id="qualityCheckBarLabel" class="trackingBarLabels"
+		ng-show="showQualityCheckLabel"> Quality Check </label> <label
+		id="deliveryBarLabel" class="trackingBarLabels"
+		ng-show="showOutForDeliveryLabel"> Out for Delivery </label>
+
+	<!-- Tracking Skewed Grey Bars -->
+	<div class="orderPlacedGreyBar" ng-show="showOrderPlacedGreyBar">
+	</div>
+	<div class="preparationGreyBar" ng-show="showPreparationGreyBar">
+	</div>
+	<div class="qualityCheckGreyBar" ng-show="showQualityCheckGreyBar">
+	</div>
+	<div class="outForDeliveryGreyBar" ng-show="showOutForDeliveryGreyBar">
+	</div>
+
+	<div class="trackingBar" ng-style="trackingBarBorderColor">
+
+		<!-- Tracking Bar -->
+		<div id="orderPlacedProgress" ng-show="showBarOrderPlaced"
+			ng-style="barDelivered"></div>
+		<div id="preparationProgress" ng-show="showBarPreparation"
+			ng-style="barDelivered"></div>
+		<div id="qualityCheckProgress" ng-show="showBarQualityCheck"
+			ng-style="barDelivered"></div>
+		<div id="outDeliveryProgress" ng-show="showBarOutForDelivery"
+			ng-style="barDelivered"></div>
+		<div id="deliveredProgress" ng-show="showBarDelivered"
+			ng-style="barDelivered"></div>
+
+		<!-- Tracking Bar Dividers -->
+		<div id="divider1" ng-style="barDivider" ng-show="showBarDivider1">
+		</div>
+		<div id="divider2" ng-style="barDivider" ng-show="showBarDivider2">
+		</div>
+		<div id="divider3" ng-style="barDivider" ng-show="showBarDivider3">
+		</div>
+		<div id="divider4" ng-style="barDivider" ng-show="showBarDivider4">
+		</div>
+
+	</div>
+	<div id="orderPlacedDate">{{orderPlacedDate}}</div>
+	<label id="lblDelivered" ng-show="showOrderDeliveredLabel">
+		Your order was delivered at {{deliveryTime}} </label>
+
+	<div id="userTracking">
+		<center>
+			<label id="lblOrderIdInput"> Enter your order number </label> <input
+				id="orderIdInput" type="text" ng-model="orderId"
+				ng-change="stopOrderStatus()" />
+			<button id="btnTrack" class="buttons" ng-click="trackOrder(orderId)">
+				Track</button>
+		</center>
+	</div>
+
+</div>
+
+
+<script type="text/ng-template" id="modalValidation.html">
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+     <img class = "modal-errorIcon" src = "images/errorIcon2.png"/>
+       <div class = "modal-validationText" > {{modalValidationText }}</div>
+     <center><button class="modalOkBtn" "type="button" ng-click="hideModal()">OK</button></center>
+     </div>
+</script>
+

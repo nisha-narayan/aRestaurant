@@ -1,0 +1,102 @@
+<html>
+<head>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/order_status/angular/angular.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/order_status/angular-route/angular-route.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/order_status/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/order_status/app.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/order_status/orderStatusController.js"></script>
+<link rel=Stylesheet
+	href="https://localhost:3000/order_status/app.css"
+	TYPE="text/css">
+
+</head>
+<body bgcolor=black ng-app="order_status"
+	ng-controller="orderStatusController">
+	<center>
+		<table id = "order_status" >
+			<thead id = "orderStatus_header" >
+				<td id = "tdOrderIdTitle" >Order #</td>
+				<td id = "tdItemsTitle">Items</td>
+				<td id = "tdQuantityTitle">Quantity</td>
+				<td id = "tdStatusTitle">Status</td>
+			</thead>
+			<tbody id = "tbdyOrderList" >
+				<tr ng-repeat="order in OrderList">
+					<td id = "tdOrderIdData" >
+						{{order.OrderId}}</td>
+					<td id = "tdItemsData">
+						<center>
+							<table>
+								<tr ng-repeat="orderItem in order.OrderItems">
+									<td>
+										<center id = "itemName" >{{orderItem.ItemName}}</center>
+									</td>
+								</tr>
+							</table>
+						</center>
+					</td>
+					<td id = "tdQuantityData" >
+						<center>
+							<table id = "tblOrderItems" >
+								<tr ng-repeat="orderItem in order.OrderItems">
+									<td id = "tdQuantity" >
+										<center>{{orderItem.Quantity}}</center>
+									</td>
+								</tr>
+							</table>
+						</center>
+					</td>
+					<td id = "tdStatusData" >
+						<center>
+							<button class="buttons"
+								ng-class="{Highlight: order._id === isItemInQueue(order._id)}">
+								Queue</button>
+							&nbsp;
+							<button class="buttons"
+								ng-class="{Highlight: order._id === isItemInPreparation(order._id)}"
+								ng-click="orderStatusUpdate(order._id,'Preparation')" 
+								ng-disabled="disablePreparation(order._id)">
+								Preparation</button>
+							&nbsp;
+							<button class="buttons"
+								ng-class="{Highlight: order._id === isItemInQualityCheck(order._id)}"
+								ng-click="orderStatusUpdate(order._id,'QualityCheck')"
+								ng-disabled="disableQualityCheck(order._id)" >
+								Quality Check</button>
+							&nbsp;
+							<button class="buttons"
+								ng-class="{Highlight: order._id === isItemInDelivery(order._id)}"
+								ng-click="orderStatusDelivery(order._id)"
+								ng-disabled="disableOutForDelivery(order._id,selectedPerson)">
+								Delivery</button>
+
+							<select id = "selectAssignee" ng-model="selectedPerson"
+								ng-init="selectedPerson = deliveryPersonList[0]"
+								ng-change="assignDeliveryPerson(order._id,selectedPerson)">
+								<option ng-repeat="deliveryPerson in deliveryPersonList"
+									value="{{deliveryPerson}}">{{deliveryPerson}}</option>
+							</select>
+						</center>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</center>
+
+
+<script type="text/ng-template" id="statusValidation.html">
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+     <img class = "modal-errorIcon" ng-src = "images/errorIcon2.png"/> <div class = "modal-validationText">  {{modalValidationText}}  </div>
+     <center><button class="modalOkBtn" "type="button" ng-click="hideModal()">OK</button></center>
+     </div>
+</script>
+
+</body>
+</html>

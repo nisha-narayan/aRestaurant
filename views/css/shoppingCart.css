@@ -1,0 +1,209 @@
+/* shopping cart page */
+
+#cart_position {
+    position:relative;
+    left: 2px;
+    top: 28.7px;
+    width: 683px;
+    background:#404040;
+    height:410px;
+    border-collapse: collapse;   
+    border:2px solid #595959;
+}
+
+.removeIcon {
+  position:relative;
+  top:3px;
+  left:13%;
+  height:22px;
+  width:20px;
+  background:url(../images/removeIcon.png) no-repeat;
+}
+
+.removeIcon:hover  {
+   border:2px solid #774379 ;
+}
+
+#cart {
+height: 220px;
+overflow-y: scroll ; 
+border-bottom: 2px solid grey;
+background-color: #b3b3b3;
+}
+
+thead, tbody {
+ display: block;
+}
+
+#cart_header {
+	color:#452440;
+	font-family:'Space Age' , cursive;
+	background-color: #868086;
+    font-size:20px; 
+    width:683px;
+    border: 1px solid grey;  
+}
+
+#cart_modify {
+    position: relative;
+    left: 90px;
+    top: 45px;
+    width: 100px;
+    background-color: #452440 ;
+    height:30px;
+    border-spacing: 2px;
+    color:grey;
+    border:2px solid #585858 ;
+    border-radius:5px; 
+    box-shadow: 0 0 10px #585858; 
+}
+
+#cart_confirm {
+    position: relative;
+    left:400px;
+    top: 45px;
+    width: 100px;
+    background-color: #452440 ;
+    height:30px;
+    border-spacing: 2px;
+    color:grey;
+    border:2px solid #585858 ;
+    border-radius:5px; 
+    box-shadow: 0 0 10px #585858; 
+}
+
+#indexLbl {
+	width:25px;
+}
+
+#nameLbl {
+	width:195px;
+}
+
+#sizeLbl {
+   width:100px;
+}
+
+#quantityLbl {
+	width:100px;
+}
+
+#costLbl {
+	width:105px;
+}
+
+#removeLbl {
+	width:110px;
+}
+
+#tdCartTitle {
+	width:683px;
+}
+
+#indexData {
+	width:45px;
+}
+
+#nameData {
+	width:210px;
+}
+
+#sizeData {
+	width:100px;
+}
+
+#quantityData {
+	width:110px;
+}
+
+#costData {
+	width:100px;
+}
+
+#removeData {
+	width:110px;
+}
+
+#costInfo {
+ font-family:'Baumans Regular';	
+ 
+}
+
+#trVertSpace1 {
+	height:20px;
+}
+
+#trVertSpace2 {
+	height:10px;
+}
+
+#tdTotalCostLbl {
+	display:inline-block;
+	position:relative;
+	font-family:'Baumans Regular';
+	left:382px;
+	width:90px;
+	color:grey;
+}
+
+#tdShipAndHandlingLbl {
+	display:inline-block;
+	position:relative;
+	font-family:'Baumans Regular';
+    width:178px;
+    left:294px;
+    color:grey;  
+}
+
+#tdTaxesLbl {
+	display:inline-block;
+	position:relative;
+    width:60px;
+    font-family:'Baumans Regular';
+    left:412px;
+    color:grey;
+}
+
+#tdGrandTotalLbl {
+	display:inline-block;
+	width:100px;
+	position:relative;
+	font-family:'Baumans Regular';
+	left:371px;
+	color:grey;
+}
+
+#tdTotalCostData {
+	display:inline-block;
+    position:relative;
+    color:grey;
+    left:310px;
+    width:100px; 
+}
+
+#tdShipAndHandleData {
+	display:inline-block;
+	position:relative;
+	color:grey;
+	left:310px;
+	width:100px;
+}
+
+#taxesData {
+	display:inline-block;
+	width:100px;
+	position:relative;
+	color:grey;
+	left:310px;
+}
+
+
+#grandTotalLbl {
+	display:inline-block;
+	position:relative;
+	left:310px;
+	color:grey;
+	width:60px;
+	color:grey;
+	font-weight:bold;
+}

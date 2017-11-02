@@ -1,0 +1,404 @@
+
+
+
+<!-- Track order page -->
+
+.tbodyTrackOrder{
+  background:rgba(102, 102, 102,0.8);
+}
+
+
+.track_order {
+  font-family: 'Baumans Regular' ;
+  position:relative;
+  left: 2px;
+  top:28.7px;
+  width:683px ;
+  height:410px;
+  border-collapse: collapse;
+  outline: 2px solid #595959; 
+}
+
+.track_order_header {
+    position:relative;
+    top:0px;
+    background-color: #868086;
+    font-family: "Space Age"; 
+    font-size: 20px; 
+    color: #452440;
+    text-align:center;
+    height:22px;
+    border:1px solid grey;
+}
+
+
+
+.trackOrderPlaced {
+position:absolute;
+left:20px;
+top: 37px;
+width:102px;
+height:152px;
+border:1px solid grey;
+animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+
+
+#trackPreparationContainer {
+position:absolute;
+left:187px;
+top: 37px;
+width:128px;
+height:152px;
+border:1px solid grey;
+background:black;
+}
+
+
+.trackQualityCheck{
+position:absolute;
+left:380px;
+top: 37px;
+width:102px;
+height:152px;
+border:1px solid grey;
+}
+
+
+.trackOutForDelivery {
+position:absolute;
+left:545px;
+top: 37px;
+width:115px;
+height:152px;
+border:1px solid grey;
+}
+
+.trackOrderLabels {
+position:absolute;
+top:10px;
+left:15px;
+color:grey;
+width :100px;
+text-align:center;
+}
+
+.orderPlacedGreyBar {
+ position:absolute;
+ top:270px;
+ left:35px;
+ width:80px;
+ height:5px;
+ background:#452440;
+ transform : skewX(-45deg);
+}
+
+.preparationGreyBar{
+ position:absolute;
+ top:270px;
+ left:150px;
+ width:220px;
+ height:5px;
+ background:#452440;
+ transform : skewX(-45deg);
+}
+
+.qualityCheckGreyBar{
+ position:absolute;
+ top:270px;
+ left:410px;
+ width:70px;
+ height:5px;
+ background:#452440;
+ transform : skewX(-45deg);
+}
+
+.outForDeliveryGreyBar{
+ position:absolute;
+ top:270px;
+ left:520px;
+ width:110px;
+ height:5px;
+ background:#452440;
+ transform : skewX(-45deg);
+}
+
+.trackingBar {
+ position:absolute;
+ left:20px;
+ top:285px;
+ height:25px;
+ width:643px;
+ border:1px solid grey;
+ background: rgba(26, 26, 26, 0.9);
+ border-radius:5em;
+}
+
+.trackingBarLabels {
+ position:absolute;
+ top:245px;
+ height:10px;
+ color:grey;
+}
+
+.trackingPhasesContainer {
+ position:absolute;
+ top:22px;
+ width:683px;
+ border-top:1px solid grey;
+ height:180px;
+ border-bottom:1px solid grey;
+ z-index:3;
+ background: rgba(13, 13, 13, 0.9);
+}
+
+#prepFire {
+	position:absolute;
+	left:3px;
+	top:41px;
+	height:70px;
+	width:45px;	
+}
+
+#prepKettle {
+	position:absolute;
+	left:3px;
+	top:40px;
+	height:50px;
+	width:45px;
+}
+
+#prepPatch1 {
+    position:absolute;
+    width:3px;
+    height:5px;
+    top:40px;
+    left:47px;
+    z-index:1;
+}
+
+#prepChef {
+	position:absolute;
+	left:47px;
+	top:40px;
+	height:110px;
+	width:80px;
+}
+
+#prepPan {
+	position:absolute;
+	left:0px;
+	top:110px;
+	height:40px;
+	width:40px;
+}
+
+#orderPlaced {
+	position:relative;
+	left:25px;
+	top:65px;
+}
+
+#lblOrderPlaced {
+	left:0px;
+}
+
+#orderPlacedTime {
+    position:absolute;
+    color:darkgrey;
+    left:30px;
+    top:215px;
+}
+
+#lblQualityCheck {
+	left:0px;
+}
+
+#qualityCheck {
+	position:absolute;
+	left:0px;
+	top:35px;
+	height:115px;
+	width:90px;
+}
+
+#lblOutForDelivery {
+	left:1.5px;
+	width:110px;
+}
+
+#delivery {
+	position:absolute;
+	left:4px;
+	top:47px;
+	height:100px;
+	width:105px;
+}
+
+
+#orderId {
+	position:absolute;
+	color:darkgrey;
+	left:530px;
+	top:215px;
+}
+
+#orderPlacedBarLabel {
+	left:30px;
+	width:100px;
+}
+
+#preparationBarLabel {
+	left:225px;
+}
+
+#qualityCheckBarLabel {
+	left:400px;
+}
+
+#deliveryBarLabel {
+	left:520px;
+}
+
+#orderPlacedProgress {
+	position:absolute;
+	top:0px;
+	border-top-left-radius:5em;
+	border-bottom-left-radius:5em;
+	height:23px;
+	left:0px;
+	width:102px;
+	border:1px solid grey;
+	background:#452440;
+}
+
+
+#preparationProgress {
+	position:absolute;
+	top:0px;
+	height:23px;
+	left:104px;
+	width:278px;
+	border:1px solid grey;
+	background:#452440;
+}
+
+#qualityCheckProgress {
+	position:absolute;
+	top:0px;
+	height:23px;
+	left:384px;
+	width:73px;
+	border:1px solid grey;
+	background:#452440;
+}
+
+#outDeliveryProgress {
+	position:absolute;
+	top:0px;
+	height:23px;
+	left:459px;
+	width:163px;
+	border:1px solid grey;
+	background:#452440;
+}
+
+#deliveredProgress {
+	position:absolute;
+	top:0px;
+	height:23px;
+	left:624px;
+	width:17px;
+	border:1px solid grey;
+	border-top-right-radius:5em;
+	border-bottom-right-radius:5em;
+}
+
+#divider1 {
+    position:absolute;
+    left:102px;
+    width:2px;
+    height:24px;
+    background:grey;
+}
+
+
+#divider2 {
+	position:absolute;
+	left:382px;
+	width:2px;
+	height:24px;
+	background:grey;
+}
+
+#divider3 {
+	position:absolute;
+	left:457px;
+	width:2px;
+	height:24px;
+	background:grey;
+}
+
+#divider4 {
+	position:absolute;
+	left:622px;
+	width:2px;
+	height:24px;
+	background:grey;
+}
+
+#orderPlacedDate {
+	position:absolute;
+	top:330px;
+	left:30px;
+	color:grey;
+}
+
+#lblDelivered {
+    position:absolute;
+    top:330px;
+    left:380px;
+    color:grey;
+    width:300px;	
+}
+
+#orderIdInput {
+	position:relative;
+	width:100px;
+	left:10px;
+	top:12px;
+}
+
+#btnTrack {
+	position:relative;
+	height:25px;
+	left:25px;
+	top:12px;
+}
+
+#lblOrderIdInput {
+	position:relative;
+	top:15px;
+	color:grey;
+}
+
+
+#userTracking {
+	position:absolute;
+	top:360px;
+	width:683px;
+	height:50px;
+	border-top:1px solid grey;
+	background:rgba(13, 13, 13, 1);
+}
+
+#prepPatch2 {
+	position:absolute;
+	width:3px;
+	height:3px;
+	top:42px;
+	left:125px;
+	z-index:1;
+}
+

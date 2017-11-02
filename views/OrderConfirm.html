@@ -1,0 +1,307 @@
+<div class="hiName">Hi {{customerFirstName}}</div>
+<img id="downArrow0" ng-src="images/downArrow3.png" ng-click="showProfileOptions()" ng-hide = "hideDownArrow" />
+<div id="orderConfirmCover"  ng-hide="hideOrderConfirmContainer" ></div>
+<table id="order_confirm">
+	<thead id="orderConfirmHeader">
+		<tr>
+			<td id="tdOrderSummary" colspan="2">
+				<center>O r d e r &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S u m m a r y</center>
+			</td>
+		</tr>
+	</thead>
+
+	<tbody id="orderMessage">
+		<tr id="trVerticalSpace1">
+		</tr>
+		<tr id="trOrderGreeting">
+			<td id="tdOrderGreeting"><label id="orderGreeting">
+					Hello {{CustomerPaymentInfo.customerName}} </label></td>
+			<td id="tdOrderNumber"><label id="orderNumber"> Order #
+					{{order_Id}} </label></td>
+		</tr>
+		<tr id="trVerticalSpace1"></tr>
+		<tr id="trOrderMessage">
+			<td colspan="2">
+				<center>Your order was placed successfully</center>
+			</td>
+		</tr>
+		<tr id="trOrderMessage">
+			<td colspan="2">
+				<center>Below are your order details.</center>
+			</td>
+		</tr>
+		<tr id="trVerticalSpace1">
+		</tr>
+	</tbody>
+
+	<tbody id="orderDetails">
+		<tr>
+			<td id="itemDetails">
+				<table id="tblItemAndCost">
+					<tbody id="tbdyItemAndCost">
+						<tr id="trItemAndCost">
+							<td id="tdItemLbl">
+								<center>Item</center>
+							</td>
+							<td id="tdCostLbl">
+								<center>Cost</center>
+							</td>
+						</tr>
+					</tbody>
+
+					<tbody id="tbdyCartInfo">
+						<tr id="trOrderItems" ng-repeat="order in orderItems">
+							<td id="tdItemName">{{order.ItemName}}</td>
+							<td id="tdItemCost"><label id="lblCost">{{order.Cost}}
+							</label></td>
+						</tr>
+						<tr></tr>
+						<tr></tr>
+						<tr></tr>
+					</tbody>
+
+					<tbody id="tbdyOrderPricing">
+						<tr id="trVerticalSpace2">
+							<td id="pricingLbl">
+							<td id="pricingData"></td>
+						</tr>
+						<tr>
+							<td id="pricingLbl">Sub Total</td>
+							<td id="pricingData"><center>{{calcTotalOrderCost();}}</center></td>
+						</tr>
+						<tr>
+							<td id="pricingLbl">Shipping and Handling</td>
+							<td id="pricingData"><center>{{Shipping_Handling}}</center></td>
+						</tr>
+						<tr>
+							<td id="pricingLbl">Taxes</td>
+							<td id="pricingData"><center>{{Taxes}}</center></td>
+						</tr>
+						<tr id="trVerticalSpace3">
+							<td id="pricingLbl">
+							<td id="pricingData"></td>
+						</tr>
+						<tr>
+							<td id="pricingLbl">Order Total</td>
+							<td id="pricingData">
+								<center id="grandTotal">{{grandTotal}}</center>
+							</td>
+						</tr>
+						<tr id="trVerticalSpace3">
+							<td id="pricingLbl">
+							<td id="pricingData"></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+			<td id="addressDetails">
+				<table id="tblAddress">
+					<tbody id="tbdyAddress">
+						<tr id="trShipAddress">
+							<td id="tdShipAddress" colspan="2"><center>Shipping
+									Address</center></td>
+						</tr>
+						<tr>
+							<td><center>{{CustomerPaymentInfo.deliveryAddress.shipAddressLine1}}</center></td>
+						</tr>
+						<tr>
+							<td>
+								<center>{{CustomerPaymentInfo.deliveryAddress.shipAddressLine1}}
+								</center>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<center>{{CustomerPaymentInfo.deliveryAddress.shipCity}}	
+							</td>
+							</center>
+						</tr>
+						<tr>
+							<td>
+								<center>{{CustomerPaymentInfo.deliveryAddress.shipState}}	
+							</td>
+							</center>
+						</tr>
+						<tr>
+							<td>
+								<center>
+									{{CustomerPaymentInfo.deliveryAddress.shipZipCode}}
+							</td>
+							</center>
+						</tr>
+					</tbody>
+					<tbody id="tbdyContactInfo">
+						<tr id="trContactInfo">
+							<td id="tdContactInfo" colspan="2">
+								<center>Contact Information</center>
+							</td>
+						</tr>
+						<tr id="trVerticalSpace4" />
+						<tr>
+							<td id="tdEmailLbl">
+								<center>E-mail</center>
+							</td>
+							<td id="tdEmail">
+								<center>
+									<div id="divEmailAddress" ng-mouseenter = "showEmailToolTip()" ng-mouseout = "hideEmailToolTip = true">{{CustomerPaymentInfo.customerEmail}}
+									</div>
+								</center>
+							</td>
+						</tr>
+						<tr>
+							<td id="tdPhoneLbl">
+								<center>Phone</center>
+							</td>
+							<td id="tdPhone">
+								<center>{{CustomerPaymentInfo.customerPhone}}</center>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+	</td>
+	</tr>
+	</tbody>
+
+	<tbody id="tbdyPymtMethod">
+		<tr id="trPymtMethod">
+			<td id="tdPymtMethod" colspan="2">
+				<center>
+					<label> Payment Method </label> <label id="lblPymtMethod">{{CustomerPaymentInfo.paymentMethod}}</label>
+				</center>
+			</td>
+		</tr>
+	</tbody>
+
+	<tbody id="tbdyTrackOrder">
+		<tr>
+			<td id="tdTrackOrder" colspan="2">
+				<center>
+					<button id="trackOrder" class="buttons" type="submit"
+						ng-click="trackOrder()">Track Order</button>
+				</center>
+			</td>
+		</tr>
+	</tbody>
+
+</table>
+<div id="divEmailToolTip" ng-hide = "hideEmailToolTip">{{CustomerPaymentInfo.customerEmail}}</div>
+									
+<script type="text/ng-template" id="modalValidation.html">
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+     <img class = "modal-errorIcon" src = "images/errorIcon2.png"/>
+       <div class = "modal-validationText" > {{modalValidationText }}</div>
+     <center><button class="modalOkBtn" "type="button" ng-click="hideModal()">OK</button></center>
+     </div>
+</script>
+
+
+<!-- Adding email formatted HTML template below, hidden from main view -->
+
+<div id = "orderConfirmContainer" style = "top:0px;borderwidth:638px;" ng-hide = "true" >
+<table id = "order_confirm" style = "padding-left:5px;background:#b3b3b3;width:636px;border-collapse:collapse;outline:1px solid grey;color:black;" ng-hide = "true" >
+<thead style = "background-color:#868086;" >
+<tr > <td width = "631px" colspan = "3" style="font-size:20px;color:#452440;font-family:'calibri';font-weight:bold;"> 
+<center> O r d e r   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S u m m a r y  </center>       </td>	</tr>							
+</thead>
+
+<tbody style = "border-top:1px solid #595959;background:#b3b3b3;" >
+<tr width = "631px" height = "10px" > </tr>
+<tr width = "631px"> <td width = "315px" style = "padding-left:10px;"> Hello  {{CustomerPaymentInfo.customerName}}   </td> 
+<td width = "316px" colspan = "2" style = "text-align:right;padding-right:10px;">  Order # {{order_Id}}  </td></tr>
+<tr width = "631px" height = "10px"></tr>
+<tr width = "631px"> <td  colspan = "3" > <center>Your order was placed successfully </center>  </td> </tr>
+<tr width = "631px"> <td  colspan = "3"> <center> Below are your order details. </center> </td>  </tr>
+<tr width = "631px" height = "10px" > </tr>
+</tbody>
+
+<tbody  style = "background:#868086;width:636px;border-top:1px solid lightgrey;border-bottom:1px solid grey;font-size:12px;" >
+<tr height ="20px"  style = "background-color:rgba(26, 0, 26, 0.7);color:#b3b3b3;font-size: 14px;">  
+<td width = "315px" style = "border: 1px solid #b3b3b3;" > <center> Item </center> </td>   
+<td width = "170px" style = "border-top: 1px solid #b3b3b3;border-bottom: 1px solid #b3b3b3;" > </td>
+<td width = "146px" style = "border-top: 1px solid #b3b3b3;border-bottom: 1px solid #b3b3b3;"  > Cost  </td> </tr>
+<tr height = "5px" > <td colspan = "3" > </td></tr>
+<tr style = "height: 20px;" ng-repeat = "order in orderItems" > 
+<td style = "text-align: center;" width = "315px" >{{order.ItemName}} </td>
+<td width = "170px" > </td>
+<td width = "146px"> {{order.Cost}}  </td>
+</tr> 
+<tr height = "5px"  ><td colspan = "3" style = "border-bottom:1px solid #666666;"> </td> </tr>
+
+<tr height = "5px" > <td width = "315px" > 
+<td  width = "316px" colspan = "2"> </td></tr>
+<tr>  <td  width = "315px"  > </td>   
+<td width = "170px"><label> Sub Total </label></td> 
+<td width = "146px"> {{calcTotalOrderCost();}} </td> </tr>
+<tr>  <td  width = "316px"  > </td>   
+<td width = "170px"> <label> Shipping and Handling </label> </td>
+<td width = "146px">  {{Shipping_Handling}} </td> </tr>
+<tr>  <td width = "315px" >   </td>   
+<td width = "170px" ><label> Taxes  </label> </td>
+<td width = "146px"> {{Taxes}} </td> </tr>
+<tr height = "3px" > <td width = "315px" > <td width = "316px" colspan = "2" > </td></tr>
+<tr>  <td width = "315px">    </td>   
+<td width = "170px" style = "font-weight:bold;"> <label> Order Total </label> </td>
+<td width = "146px" style = "font-weight:bold;">  {{grandTotal}} </td> </tr>
+<tr height = "3px" > <td width = "315px" > <td width = "316px" colspan = "2"> </td></tr>
+
+</tbody>  
+
+
+<tbody style = "border-left:2px solid grey;" >
+ <tr> <td style = "border-right:1px solid grey;width:315px;border-bottom:1px solid grey;"> 
+<table style = "width:315px;height:126px;border-collapse:collapse;" >
+ 
+<tr height = "20px" > 
+<td width = "315px" colspan = "2" style = "background-color:rgba(26, 0, 26, 0.7);color:#b3b3b3;border-bottom:1px solid lightgrey;font-size:14px;" > <center>Shipping Address </center> </td>  </tr> 
+
+<tr> <td style = "background-color:#8c8c8c;" > <center>{{CustomerPaymentInfo.deliveryAddress.shipAddressLine1}} </center> </td> </tr>
+<tr> <td style = "background-color:#8c8c8c;" > <center>{{CustomerPaymentInfo.deliveryAddress.shipAddressLine1}} </center> </td> </tr>
+<tr> <td style = "background-color:#8c8c8c;" > <center>{{CustomerPaymentInfo.deliveryAddress.shipCity}}  </td> </center> </tr>
+<tr> <td style = "background-color:#8c8c8c;" > <center>{{CustomerPaymentInfo.deliveryAddress.shipState}} </td> </center> </tr> 
+<tr> <td style = "background-color:#8c8c8c;"  > <center> {{CustomerPaymentInfo.deliveryAddress.shipZipCode}} </td> </center> </tr> 
+
+ </table> </td> 
+ 
+<td style = "border-left:1px solid grey;width:316px;border-bottom:1px solid grey;" colspan = "2" > 
+<table style = "height:126px;width:318px;border-collapse:collapse;">  
+<tbody height = "65px" >
+<tr height = "20px" style = "background-color:rgba(26, 0, 26, 0.7);color:#b3b3b3;font-size:14px;"> 
+<td width = "316pxpx" colspan = "2"  > 
+<center>Contact Information </center> </td>  </tr> 
+<tr> <td width = "61px" height = "28px" style = "background-color:rgba(26, 0, 26, 0.7);font-size:14px;color:#b3b3b3;border:1px solid #b3b3b3;" > <center> E-mail </center> </td> 
+<td width = "255px"  style = "background-color:#8c8c8c;border-bottom:1px solid #666666;" > <center> {{CustomerPaymentInfo.customerEmail}} </center> </td> </tr>
+<tr> <td width = "61px" height = "27px" style = "background-color:rgba(26, 0, 26, 0.7);font-size:14px;color:#b3b3b3;border-left:1px solid #b3b3b3;border-right:1px solid #b3b3b3;" > <center> Phone </center> </td>  
+<td width = "255px"  style = "background-color:#8c8c8c;" > <center> {{CustomerPaymentInfo.customerPhone}} </center> </td> </tr>
+<tr height = "20px" style = "font-family:'Baumans Regular';background-color:rgba(26, 0, 26, 0.7);color:#b3b3b3;border:1px solid #b3b3b3;font-size:14px;" >  
+<td width = "316px" colspan = "2" > <center>  Payment Method  </center> </td> </tr>
+<tr height = "25px"><td width = "316px" style = "background-color:#8c8c8c;"  colspan = "2"> <center>  {{CustomerPaymentInfo.paymentMethod}}</label> </center></td></tr>
+
+</tbody>
+</table>
+</td> 
+</tr>
+</tbody>
+
+<tbody style = "width:638px;background-color:#666666;">
+ <tr width = "637px"> <td colspan = "3">
+ <table width = "637px">
+<tr width = "637px" height = "5px">  </tr>
+<tr width = "637px" > <td  colspan = "3" > <center> 
+<button id = "trackOrder" 
+  style = "position:relative;top:5px;width:100px;background-color:rgba(26, 0, 26, 0.7);height:30px;border-spacing:2px;color:grey;border:2px solid #585858 ;border-radius:5px;"> 
+  <a href = "https://localhost:3000/views/#/trackOrder" style = "color:grey;">Track Order  </a> </button> 
+</center> </td> </tr> 
+<tr width = "637px" height = "5px">  </tr>
+</table>
+</td> </tr> 
+
+</tbody>
+
+</table>
+
+</div>
+
+
+

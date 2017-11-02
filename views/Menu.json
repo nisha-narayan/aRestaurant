@@ -1,0 +1,179 @@
+[
+	                       {	                    	  
+	                    	   "Name": "Dosa",
+	                    	   "Segment": "breakfast",
+	                    	   "Available" : "Yes" ,
+	                    	   "Sizes": ["Small" , "Medium", "Large"],
+	                    	   "Cost" : {
+	                    	   "Small" : "5.99" ,
+	                    	   "Medium" : "7.99" ,
+	                    	   "Large" : "12.99" 
+	                    	   },
+	                    	   "SelectedSize": "Small",
+	                    	   "SelectedQuantity" : "0"         	 
+	                       } ,
+	                       {
+	                    	   
+	                    	   "Name": "Pizza",
+	                    	   "Segment": "All",    
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Small" , "Medium", "Large" ],
+	                    	   "Cost" : {
+	                    	   "Small" : "5.99" ,
+	                    	   "Medium" : "7.99" ,
+	                    	   "Large" : "12.99" 
+	                    	   },
+	                    	   "SelectedSize": "Small",
+	                    	   "SelectedQuantity" : "0" 
+	                       } ,
+	                       {
+	                    	 
+	                    	   "Name": "Burger",
+	                    	   "Segment": "breakfast",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Small" , "Large" ], 
+	                    	   "Cost" : {
+	                    	   "Small" : "5.99" ,
+	                    	   "Large" : "12.99" 
+	                    	   },
+	                    	   "SelectedSize": "Small",
+	                    	   "SelectedQuantity" : "0"   
+	                       }  ,                                           
+	                       {
+	                    	  
+	                    	   "Name": "Noodles",
+	                    	   "Segment": "Dinner",  
+	                    	   "Available" : "No",  
+	                    	   "Sizes" : ["Medium" , "Large" ],
+	                    	   "Cost" : {
+	                    	   "Medium" : "5.99" ,
+	                    	   "Large" : "12.99" 
+	                    	   },
+	                    	   "SelectedSize": "Medium",
+	                    	   "SelectedQuantity" : "0" 
+	                       } ,
+	                       {
+	                    	   
+	                    	   "Name": "Sandwich",
+	                    	   "Segment": "All",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Single" , "Double" ],
+	                    	    "Cost" : {
+	                    	    "Single" : "5.99" ,
+	                    	    "Double" : "12.99" 
+	                    	    },
+	                    	    "SelectedSize": "Single",
+	                    	    "SelectedQuantity" : "0"
+	                       } ,
+	                       {
+	                    	   
+	                    	   "Name": "Foot Long",
+	                    	   "Segment": "All",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Small" , "Large" ],
+	                    	    "Cost" : {
+	                    	    "Small" : "5.99" ,
+	                    	    "Large" : "12.99" 
+	                    	    },
+	                    	    "SelectedSize": "Small",
+	                    	    "SelectedQuantity" : "0" 
+	                       } ,
+	                       {
+	                    	   
+	                    	   "Name": "Lasagna",
+	                    	   "Segment": "All",  
+	                    	   "Available" : "No",  
+	                    	   "Sizes" : ["Regular"],
+	                    	    "Cost" : {
+	                    	    "Regular" : "8.75" 
+	                    	    },
+	                    	    "SelectedSize": "Regular",
+	                    	    "SelectedQuantity" : "0"  
+	                       } ,
+	                        {
+	                    	   
+	                    	   "Name": "Banana Pancakes",
+	                    	   "Segment": "All",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Regular" , "Large"],
+	                    	   "Cost" : {
+	                    	    "Regular" : "8.75",
+	                    	    "Large" : "12.45"
+	                    	    },
+	                    	    "SelectedSize": "Regular",
+	                    	    "SelectedQuantity" : "0"  
+	                       } ,
+	                        {
+	                    	   
+	                    	   "Name": "Spanish Rice",
+	                    	   "Segment": "All",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Regular"],
+	                    	   "Cost" : {
+	                    	    "Regular" : "9.75"
+	                    	    },
+	                    	    "SelectedSize": "Regular",
+	                    	    "SelectedQuantity" : "0"  
+	                       } ,
+	                       {
+	                    	   
+	                    	   "Name": "Pasta",
+	                    	   "Segment": "All",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Regular" , "Large"],
+	                    	    "Cost" : {
+	                    	    "Regular" : "5.99" ,
+	                    	    "Large" : "12.99" 
+	                    	    },
+	                    	    "SelectedSize": "Regular",
+	                    	    "SelectedQuantity" : "0"  
+	                       } ,
+	                       {
+	                    	   
+	                    	   "Name": "Vegetarian Quesadilla",
+	                    	   "Segment": "Lunch",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Regular" , "Large"],
+	                    	    "Cost" : {
+	                    	    "Regular" : "5.99" ,
+	                    	    "Large" : "12.99" 
+	                    	    },
+	                    	    "SelectedSize": "Regular",
+	                    	    "SelectedQuantity" : "0"
+	                       },
+	                       {
+	                    	   
+	                    	   "Name": "Vegetable Manchurian",
+	                    	   "Segment": "Dinner",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Regular"],
+	                    	    "Cost" : {
+	                    	    "Regular" : "8.99"
+	                    	    },
+	                    	    "SelectedSize": "Regular",
+	                    	    "SelectedQuantity" : "0"  
+	                       },
+	                       {   
+	                    	   "Name": "Vegetable Fried Rice",
+	                    	   "Segment": "Dinner",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Regular"],
+	                    	    "Cost" : {
+	                    	    "Regular" : "10.99"
+	                    	    },
+	                    	    "SelectedSize": "Regular",
+	                    	    "SelectedQuantity" : "0"  
+	                       },
+	                        {   
+	                    	   "Name": "Chilly Paneer",
+	                    	   "Segment": "Dinner",  
+	                    	   "Available" : "Yes",  
+	                    	   "Sizes" : ["Regular"],
+	                    	    "Cost" : {
+	                    	    "Regular" : "10.99"
+	                    	    },
+	                    	    "SelectedSize": "Regular",
+	                    	    "SelectedQuantity" : "0" 
+	                       }
+	                                              
+]

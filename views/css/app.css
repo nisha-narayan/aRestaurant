@@ -1,0 +1,23 @@
+@import url("index.css");
+@import url("menu.css");
+@import url("accordion.css");
+@import url("signIn.css");
+@import url("shoppingCart.css");
+@import url("paymentDetails.css");
+@import url("orderConfirm.css");
+@import url("trackOrder.css");
+
+@font-face {
+    font-family: Great Vibes;
+    src: url(fonts/GreatVibes.ttf);
+}
+
+@font-face {
+    font-family: Space Age;
+    src: url(fonts/SpaceAge.ttf);
+}
+
+@font-face {
+    font-family: Baumans Regular;
+    src: url(fonts/Baumans-Regular.ttf);
+}

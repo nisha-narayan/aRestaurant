@@ -1,0 +1,60 @@
+<html>
+<head>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/delivery_person/angular/angular.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/delivery_person/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/delivery_person/app.js"></script>
+<script TYPE="text/javascript"
+	src="https://localhost:3000/delivery_person/deliveryPersonController.js"></script>
+<link rel=Stylesheet
+	href="https://localhost:3000/delivery_person/app.css"
+	TYPE="text/css">
+
+</head>
+<body bgcolor=black ng-app="delivery_person"
+	ng-controller="deliveryPersonController">
+	<center>
+		<table id = "order_status" >
+			<thead id = "orderStatus_header" >
+				<td id = "personId" > # </td>
+				<td id = "tdPersonName"> Delivery Person </td>
+				<td id = "availability"> Availability </td>
+			</thead>
+			<tbody id = "tbdyPersonList" >
+				<tr id = "trDeliveryPerson" ng-repeat="person in personList">
+					<td id = "tdPersonIdData" >
+						{{person.PersonId}}</td>
+					<td id = "tdNameData">
+					    {{person.UserName}}</td>
+					<td id = "tdAvailability" >
+						<center>
+							<button class="buttons"
+								ng-class="{Highlight: person._id === isAvailable(person._id)}"
+								ng-click="availabilityUpdate(person._id,'Yes')" >
+								Yes </button>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<button class="buttons"
+								ng-class="{Highlight: person._id === isNotAvailable(person._id)}"
+								ng-click="availabilityUpdate(person._id,'No')" > 
+								No </button>
+						</center>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</center>
+
+
+<script type="text/ng-template" id="deliveryValidation.html">
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+     <img class = "modal-errorIcon" ng-src = "images/errorIcon2.png"/> <div class = "modal-validationText">  {{modalValidationText}}  </div>
+     <center><button class="modalOkBtn" "type="button" ng-click="hideModal()">OK</button></center>
+     </div>
+</script>
+
+</body>
+</html>

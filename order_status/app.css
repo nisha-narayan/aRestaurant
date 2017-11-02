@@ -1,0 +1,178 @@
+@font-face {
+    font-family: Great Vibes;
+    src: url(fonts/GreatVibes.ttf);
+}
+
+@font-face {
+    font-family: Space Age;
+    src: url(fonts/SpaceAge.ttf);
+}
+
+@font-face {
+    font-family: Baumans Regular;
+    src: url(fonts/Baumans-Regular.ttf);
+}
+
+
+#orderStatus_header {
+	font-family:'Space Age', cursive;
+    background-color: #868086;
+    color:#262626; 
+    font-size: 18px;  
+    text-align:center;
+    height:30px;
+    border-top: 2px solid #595959; 
+    border-left: 2px solid #595959;  
+    border-right: 2px solid #595959;   
+}
+
+
+#order_status {
+border: 1px solid grey;
+width:960px;
+background:#000000;
+border-collapse:collapse;
+}
+
+
+.buttons {
+ background:#0d0d0d;
+ height:35px;
+ color:grey;
+ border-radius:3px;
+ border:2px solid #595959;
+}
+
+.Highlight {
+ background:green;
+ color:#001a00;
+}
+
+#tdOrderIdTitle {
+	width:120px;
+	text-align:center;
+}
+
+#tdItemsTitle {
+	width:220px;
+}
+
+#tdQuantityTitle {
+	width:80px;
+}
+
+#tdStatusTitle  {
+	width:500px;
+}
+
+#tdOrderIdData {
+	width:120px;
+	color:#b3b3b3; 
+	border: 2px solid #595959;
+	text-align:center;
+}
+
+#tdItemsData {
+	font-family:'Baumans Regular';
+	width:200px;
+	border-top: 2px solid #595959; 
+	border-bottom: 2px solid #595959; 
+	border-right: 2px solid #595959;
+}
+
+#itemName {
+	color:grey;	
+}
+
+#tdQuantityData {
+	width:50px;
+	border-top: 2px solid #595959; 
+	border-bottom: 2px solid #595959;
+	border-right: 2px solid #595959;
+	text-align:center;
+}
+
+#tdQuantity {
+   color:#b3b3b3;
+}
+
+#tdStatusData {
+    width:500px;
+    border-top: 2px solid #595959; 
+	border-bottom: 2px solid #595959;
+	border-right: 2px solid #595959;				
+}		
+
+#tblOrderItems {
+	padding:15px;
+}
+
+#selectAssignee {
+	position: relative; 
+	width: 120px; 
+	left: 10px; 
+	border: 1px solid grey; 
+	background: lightgrey;
+}
+
+.modal-header {
+  top:35%;
+  left:38%;
+  height:20px;
+  width:350px;
+  font-family: "Great Vibes" , cursive; 
+  position:absolute;
+  z-index:10;
+ /*  background-color:#452440; */
+  background-color:#321a2f;
+  border-top: 2px solid #544554;
+  border-left: 2px solid #544554;
+  border-right: 2px solid #544554;
+  border-top-left-radius:1em;
+  border-top-right-radius:1em;
+}
+
+.modal-body {
+  top:38%;
+  left:38%;
+  height:100px;
+  width:350px;
+  position:absolute;
+  z-index:10;
+  background-color:#382E38;
+  border-top: 1px solid #544554;
+  border-left: 2px solid #544554;
+  border-right: 2px solid #544554;
+  border-bottom: 2px solid #544554;
+  border-bottom-right-radius:1em;
+  border-bottom-left-radius:1em;
+}
+
+.modal-validationText {
+  position:absolute;
+  top:12px;
+  left:60px;
+  height:40px;
+  width:250px;
+  text-align:center;
+  color:#b3b3b3;
+  font-family:'Calibri';
+}
+
+.modal-errorIcon {
+  position:relative;
+  top:10px;
+  left:10px;
+}
+
+.modalOkBtn {
+    position:relative;
+    top:33px;
+    border:2px solid #774379 ;
+    background-color: #452440 ;
+    border-spacing: 2px;
+    color:grey;
+    border:2px solid #585858 ;
+    border-radius:5px;  
+    box-shadow: 0 0 5px #585858 ;
+}

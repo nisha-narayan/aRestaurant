@@ -1,0 +1,268 @@
+<div ng-class="{hiName:true}" ng-hide="hideHiFirstName" >Hi {{customerFirstName}} </div><img id="downArrow0" ng-src="images/downArrow3.png" ng-click="showProfileOptions()" ng-hide = "hideDownArrow" />
+<img id = "loadingIcon"  ng-src = "images/loading1.gif" ng-show = "showLoadingIcon"/>
+<div id="menuCover" class="menu_container" ng-hide="hideMenuContainer" ng-style="menuContainer"></div>
+
+<table ng-class="{menu_position:true}" id="menu">
+	<thead ng-class="{menu_header:true}">
+		<td id = "tdMenuItemFilter" ><input id = "menuFilterInput" type="text" ng-model="nameFilter" placeholder="Search..." /></td>
+		<td id = "tdMenuTitle" >
+			<center>M e n u</center>
+		</td>
+		<td>
+			<div ng-app='first_app' ng-controller='TimeCtrl'>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time : {{clock |
+				date:'HH:mm:ss '}}</div>
+		</td>
+	</thead>
+	<tbody>
+		<tr ng-class="{column_names:true}">
+			<td id = "indexTitle">Index</td>
+			<td id = "nameTitle" >Name</td>
+			<td id = "sizeTitle" >Size</td>
+			<td id = "quantityTitle">Quantity</td>
+			<td id = "costTitle">Cost</td>
+			<td id = "availabilityTitle">Availability</td>
+			<td id = "selectionTitle">Selection</td>
+		</tr>
+	</tbody>
+
+	<tbody ng-class="{menu:true}">
+
+
+		<tr ng-style = "menuItem(menuItems.Name)"
+			ng-class="{selectedMenuItem: menuItems.Name === isItemSelected(menuItems.Name)}"
+			ng-repeat="menuItems in MenuItemList | filter: segmentAllFilter | filter: searchFilter">
+			<td id = "tdIndex" 
+				ng-class="{selectedMenuItem: menuItems.Name === itemHighlighted}"
+				ng-mouseover="showFoodDescription(menuItems.Name)"
+				ng-mouseleave='hideFoodDescription()'>{{$index + 1}}</td>
+			<td id = "tdMenuName" 
+				ng-class="{selectedMenuItem: menuItems.Name === itemHighlighted}"
+				ng-mouseover="showFoodDescription(menuItems.Name)"
+				ng-mouseleave='hideFoodDescription()'>{{menuItems.Name}}</td>
+
+			<td id = "tdSize"><select id = "sizeSelect" ng-model="selectedSize"
+				ng-init="selectedSize = initSelectedSize(menuItems.Name)"
+				ng-change="updateSelectedSize(selectedSize,menuItems.Name)">
+					<option ng-repeat="itemSize in menuItems.Sizes"
+						value="{{itemSize}}">{{itemSize}}</option>
+			</select></td>
+			<td id = "tdQuantity"  >
+				<center>
+					<input id = "quantityInput"
+						ng-init="selectedItemQuantity = initSelectedQuantity(menuItems.Name)"
+						ng-change="updateSelectedQuantity(selectedItemQuantity,menuItems.Name)"
+						ng-disabled="menuItems.Name === isItemAvailable(menuItems.Name)"
+						ng-model="selectedItemQuantity" type="text">
+				</center>
+
+			</td>
+			<td id = "tdCost" >{{menuItems.Cost[selectedSize]}}</td>
+			<td id = "tdAvailability" ng-class="{notAvailable: menuItems.Name === isItemAvailable(menuItems.Name)}">{{menuItems.Available}}</td>
+			<td id = "tdSelection" >
+				<center>
+					<input id="{{menuItems.Name}}" type="checkbox"
+						value="{{menuItems.Name}}"
+						ng-click="toggleItemSelection(menuItems.Name)"
+						ng-checked="menuItems.Name === isItemSelected(menuItems.Name)" 
+						ng-disabled="menuItems.Name === isItemAvailable(menuItems.Name)"/>
+				</center>
+			</td>
+
+		</tr>
+
+
+
+		<tr ng-class="{segment_header:true}">
+			<td colspan="7">
+				<center>Breakfast (8:00 am until 11:00 am)</center>
+			</td>
+		</tr>
+		<tr ng-style="menuItem(menuItems.Name)"
+			ng-class="{selectedMenuItem: menuItems.Name === isItemSelected(menuItems.Name)}"
+			ng-repeat="menuItems in MenuItemList | filter: segmentBreakfastFilter | filter: searchFilter">
+			<td id = "tdIndex" 
+				ng-class="{selectedMenuItem: menuItems.Name === itemHighlighted}"
+				ng-mouseover="showFoodDescription(menuItems.Name)"
+				ng-mouseleave='hideFoodDescription()'>{{$index + 1}}</td>
+			<td id = "tdMenuName" 
+				ng-class="{selectedMenuItem: menuItems.Name === itemHighlighted}"
+			    ng-mouseover="showFoodDescription(menuItems.Name)"
+				ng-mouseleave='hideFoodDescription()'>
+				{{menuItems.Name}}&nbsp;&nbsp;</td>
+
+			<td id = "tdSize" ><select id = "sizeSelect"
+				ng-model="selectedSize"
+				ng-init="selectedSize = initSelectedSize(menuItems.Name)"
+				ng-change="updateSelectedSize(selectedSize,menuItems.Name)"
+				>
+				<option ng-repeat="itemSize in menuItems.Sizes"
+						value="{{itemSize}}">{{itemSize}}</option>
+			</select></td>
+			<td id = "tdQuantity" >
+				<center>
+					<input id = "quantityInput" ng-model="selectedItemQuantity"
+						ng-init="selectedItemQuantity = initSelectedQuantity(menuItems.Name)"
+						ng-change="updateSelectedQuantity(selectedItemQuantity,menuItems.Name)"
+						ng-disabled="menuItems.Name === isItemAvailable(menuItems.Name)"
+						type="text" >
+				</center>
+
+			</td>
+			<td id = "tdCost">{{menuItems.Cost[selectedSize]}}</td>
+			<td id = "tdAvailability" 
+				ng-class="{notAvailable: menuItems.Name === isItemAvailable(menuItems.Name)}">{{menuItems.Available}}</td>
+			<td id = "tdSelection" >
+				<center>
+					<input ng-click="toggleItemSelection(menuItems.Name)"
+						ng-checked="menuItems.Name === isItemSelected(menuItems.Name)"
+						ng-disabled="menuItems.Name === isItemAvailable(menuItems.Name)"
+						type="checkbox" />
+				</center>
+			</td>
+
+		</tr>
+		<tr ng-class="{segment_header:true}">
+
+			<td colspan="7">
+				<center>Lunch (11:00 am until 3:00 pm)</center>
+			</td>
+
+		</tr>
+		<tr ng-style="menuItem(menuItems.Name)"
+			ng-repeat="menuItems in MenuItemList | filter: segmentLunchFilter | filter: searchFilter"
+			ng-class="{selectedMenuItem: menuItems.Name === isItemSelected(menuItems.Name)}">
+			<td id = "tdIndex" 
+				ng-class="{selectedMenuItem: menuItems.Name === itemHighlighted}"
+				ng-mouseover="showFoodDescription(menuItems.Name)"
+				ng-mouseleave='hideFoodDescription()'>{{$index + 1}}</td>
+			<td id = "tdMenuName"
+				ng-class="{selectedMenuItem: menuItems.Name === itemHighlighted}"
+				ng-mouseover="showFoodDescription(menuItems.Name)"
+				ng-mouseleave='hideFoodDescription()'>{{menuItems.Name}}</td>
+
+			<td id = "tdSize"><select id = "sizeSelect" ng-model="selectedSize"
+				ng-init="selectedSize = initSelectedSize(menuItems.Name)"
+				ng-change="updateSelectedSize(selectedSize,menuItems.Name)"
+				 >
+				<option ng-repeat="itemSize in menuItems.Sizes"
+						value="{{itemSize}}">{{itemSize}}</option>
+			</select></td>
+			<td id = "tdQuantity" >
+				<center>
+					<input id = "quantityInput" ng-model="selectedItemQuantity"
+						ng-init="selectedItemQuantity = initSelectedQuantity(menuItems.Name)"
+						ng-change="updateSelectedQuantity(selectedItemQuantity,menuItems.Name)"
+						ng-disabled="menuItems.Name === isItemAvailable(menuItems.Name)"
+						type="text">
+				</center>
+
+			</td>
+			<td id = "tdCost" >{{menuItems.Cost[selectedSize]}}</td>
+			<td id = "tdAvailability"
+				ng-class="{notAvailable: menuItems.Name === isItemAvailable(menuItems.Name)}">{{menuItems.Available}}</td>
+			<td id = "tdSelection">
+				<center>
+					<input ng-click="toggleItemSelection(menuItems.Name)"
+						ng-checked="menuItems.Name === isItemSelected(menuItems.Name)"
+						ng-disabled="menuItems.Name === isItemAvailable(menuItems.Name)"
+						type="checkbox" />
+				</center>
+			</td>
+		</tr>
+		<tr ng-class="{segment_header:true}">
+
+			<td colspan="7">
+				<center>Dinner (7:00 pm until 10:00 pm)</center>
+			</td>
+
+		</tr>
+		<tr ng-style="menuItem(menuItems.Name)"
+			ng-repeat="menuItems in MenuItemList | filter: segmentDinnerFilter | filter: searchFilter "
+			ng-class="{selectedMenuItem: menuItems.Name === isItemSelected(menuItems.Name)}">
+			<td id = "tdIndex" ng-class="{selectedMenuItem: menuItems.Name === itemHighlighted}"
+				ng-mouseover="showFoodDescription(menuItems.Name)"
+				ng-mouseleave='hideFoodDescription()' >{{$index +
+				1}}</td>
+			<td ng-class="{selectedMenuItem: menuItems.Name === itemHighlighted}"
+				id = "tdMenuName"  
+				ng-mouseover="showFoodDescription(menuItems.Name)"
+				ng-mouseleave='hideFoodDescription()'>{{menuItems.Name}}</td>
+
+			<td id = "tdSize" ><select id = "sizeSelect" ng-model="selectedSize"
+				ng-init="selectedSize = initSelectedSize(menuItems.Name)"
+				ng-change="updateSelectedSize(selectedSize,menuItems.Name)"
+				>
+				<option ng-repeat="itemSize in menuItems.Sizes"
+						value="{{itemSize}}">{{itemSize}}</option>
+			</select></td>
+			<td id = "tdQuantity">
+				<center>
+					<input id = "quantityInput" ng-model="selectedItemQuantity"
+						ng-init="selectedItemQuantity = initSelectedQuantity(menuItems.Name)"
+						ng-change="updateSelectedQuantity(selectedItemQuantity,menuItems.Name)"
+						ng-disabled="menuItems.Name === isItemAvailable(menuItems.Name)"
+						type="text" >
+				</center>
+
+			</td>
+			<td id = "tdCost">{{menuItems.Cost[selectedSize]}}</td>
+			<td id = "tdAvailability"
+				ng-class="{notAvailable: menuItems.Name === isItemAvailable(menuItems.Name)}">{{menuItems.Available}}</td>
+			<td id = "tdSelection" >
+				<center>
+					<input ng-click="toggleItemSelection(menuItems.Name)"
+						ng-checked="menuItems.Name === isItemSelected(menuItems.Name)"
+						ng-disabled="menuItems.Name === isItemAvailable(menuItems.Name)"
+						type="checkbox" />
+				</center>
+			</td>
+		</tr>
+
+	</tbody>
+</table>
+
+
+<button id="signin" class="buttons"
+	type="submit" ng-click="selectedMenuSignIn('signIn')"
+	ng-hide="hideSignIn">Sign In or Register
+</button>
+
+<button id="continue" class="buttons"
+	type="submit" ng-click="selectedMenuSignIn('continue')"
+	ng-hide="hideContinue">Continue
+</button>
+
+
+
+<script type="text/ng-template" id="menuValidation.html">
+     <div class = "modal-header" >
+     </div>
+     <div class = "modal-body" >
+     <img class = "modal-errorIcon" ng-src = "images/errorIcon2.png"/> <div class = "modal-validationText">  {{modalValidationText}}  </div>
+     <center><button class="modalOkBtn" "type="button" ng-click="hideModal()">OK</button></center>
+     </div>
+</script>
+
+<script type="text/ng-template" id="foodDescription.html"> 
+     <div class = "food-desc-body" >
+       <table> <tbody> 
+       <td id = "td-food-image" ><img id = "food-image" ng-src = {{menuItemName}} /></td>
+       <td id = "td-food-description"> 
+        This is a pizza . Place holder for toppings . Place holder for other ingredients. 
+        Place holder for any other description .  </td>
+       </tbody>
+       </table>
+     </div>
+</script>
+
+<script type="text/ng-template" id="menuWelcome.html"> 
+     <div class = "menu-welcome-body" >
+        <center id = "welcomeTitle" class = "shimmer" > Welcome </center> 
+        <br> 
+        <center id = "welcome-description" >
+        Scroll over menu Items to <br> get detailed descriptions of the Dish. </center>
+        <center><button class="welcomeModalOKBtn" "type="button" ng-click="hideModal()">OK</button></center>
+     </div>
+</script>
+
