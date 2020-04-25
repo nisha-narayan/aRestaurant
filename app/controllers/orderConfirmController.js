@@ -106,7 +106,7 @@ first_app.controller('orderConfirmController' , function($scope , $location ,$ro
 			    }
 		 }
 		 else {
-			  /* If transaction had completed but 'signed-in' session expired when order confirm page loads. */
+			  /* If transaction has completed but 'signed-in' session expires when order confirm page loads. */
 			 sessionStorage.setItem("sessionExpiredPage" , "/order");
 			 $location.path('/sessionExpired');
 		 }
