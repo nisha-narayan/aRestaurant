@@ -54,7 +54,7 @@
   "dependencies": {},
   "description": "[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angular-ui/bootstrap?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://secure.travis-ci.org/angular-ui/bootstrap.svg)](http://travis-",
   "devDependencies": {
-    "angular": "1.5.8",
+    "angular": "1.8.0",
     "angular-mocks": "1.5.8",
     "angular-sanitize": "1.5.8",
     "grunt": "^0.4.5",
